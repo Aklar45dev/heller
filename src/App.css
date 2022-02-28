@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+  background-color: rgb(42, 42, 42);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+canvas {
+  width: 100% !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.link-menu {
+  color:aquamarine; 
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.5em;
+  margin: 0.5em;
+}
+
+.page-title-font {
+  color:aquamarine; 
+  font-weight: 400;
+  font-size: 2em;
+  margin: 0.5em;
+}
+
+#card {
+  position: absolute;
+  width: 50%;
+  display: none;
+  margin-left: 25%;
+  margin-right: 25%;
+  transform: translateY(50%);
+}
+
+.close-btn {
+  position: absolute;
+  right: 1.5em;
+  top: 1.5em;
+  font-size: 2em;
+  color:rgb(255, 255, 255);
+  background-color:rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.close-btn:hover {
+  opacity: 0.5;
+}
+
+.close-btn:active {
+  opacity: 1;
+}
+
+.card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color:rgba(0, 0, 0, 0.6);
+  padding: 2em;
+  border-radius: 1em;
 }
 
-.App-link {
-  color: #61dafb;
+.card img {
+  width: 50%;
+  height: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-content {
+  margin: 3em;
+}
+
+.card-content h2 {
+  color:aquamarine; 
+  font-weight: 400;
+  font-size: 3em;
+}
+
+.card-content p {
+  color:rgb(255, 255, 255); 
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+#reveal1 {
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+     -moz-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+       -o-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition: all 1s ease-in-out;
+     -moz-transition: all 1s ease-in-out;
+      -ms-transition: all 1s ease-in-out;
+       -o-transition: all 1s ease-in-out;
+          transition: all 1s ease-in-out;
+}
+#reveal1.visible {
+  opacity: 1;
+  -webkit-transform: none;
+     -moz-transform: none;
+      -ms-transform: none;
+       -o-transform: none;
+          transform: none;
 }
