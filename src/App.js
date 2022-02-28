@@ -10,7 +10,7 @@ const App = () => {
 
   return (
     <Router>
-      <Link className="link-menu" to="/">LOGO</Link>
+      <Link className="logo" to="/">LOGO</Link>
       <Switch>
         <Route path='/photosphere' component={Photosphere} />
         <Route path='/map' component={Map} />
