@@ -99,31 +99,18 @@ canvas {
   text-align: center;
 }
 
-.div1 {
-  background-color: red;
-  height: 400px;
-  width: 100%;
+.project {
+  height: 1500px;
+  background-color: brown;
+  margin: 1em;
+  color:rgb(255, 255, 255);
+  font-size: 2em;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease-out;
 }
 
-.div2 {
-  background-color: green;
-  height: 400px;
-  width: 100%;
-}
-
-.div3 {
-  background-color: blue;
-  height: 400px;
-  width: 100%;
-}
-
-.bottomSpacing {
-  height: 500px;
-}
-
-.topSpacing {
-  height: 500px;
-  margin: 10%;
-  font-size: 40px;
-  background-color: grey;
+.project.fade-in{
+  opacity: 1;
+  transform: translateY(0px);
 }

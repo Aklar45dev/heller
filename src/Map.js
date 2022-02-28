@@ -1,31 +1,42 @@
 import './App.css'
-import { Controller, Scene } from 'react-scrollmagic'
-import { Tween, Timeline } from "react-gsap";
+import ScrollMagic from 'scrollmagic'
+import { ScrollMagicPluginIndicator} from "scrollmagic-plugins"
+import { Tween, Timeline } from "react-gsap"
+import $ from 'jquery'
 
 const Map = () => {
 
-  
+$(() => {
+
+  ScrollMagicPluginIndicator(ScrollMagic);
+  var controller = new ScrollMagic.Controller();
+  var Scene = new ScrollMagic.Scene({
+    triggerElement: '#project01'
+  })
+  .setClassToggle('#project01', 'fade-in') //add class to project01
+  .addIndicators({
+    name: "project01",
+    colorStart: "pink"
+  })
+  .addTo(controller)
+
+  var Scene = new ScrollMagic.Scene({
+    triggerElement: '#project02'
+  })
+  .setClassToggle('#project02', 'fade-in') //add class to project02
+  .addIndicators({
+    name: "project02",
+    colorStart: "white"
+  })
+  .addTo(controller)
+
+})
 
   return (
     <div className="App">
-      <div className="topSpacing">
-        Scroll Down to see the scrollMagic and Tween
-      </div>
-      <Controller>
-        <Scene duration={500} offset={50} triggerElement=".trigger">
-          <Tween
-            staggerFrom={{ y: 50, visibility: "hidden", opacity: 0 }}
-            staggerTo={{ y: 0, visibility: "visible", opacity: 1 }}
-            stagger={1}
-          >
-            <div className="trigger" />
-            <div className="div1" />
-            <div className="div2" />
-            <div className="div3" />
-          </Tween>
-        </Scene>
-      </Controller>
-      <div className="bottomSpacing" />
+      <div id="project01" className="project">Project 1</div>
+      <div id="project02" className="project">Project 2</div>
+      <div className="project" />
     </div>
   )
 }
