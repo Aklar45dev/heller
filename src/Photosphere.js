@@ -52,6 +52,7 @@ const Photosphere = () => {
   const pointer = new THREE.Vector2()
 
   const onPointerMove = event => {
+    const canvas = document.getElementById("canvas")
     pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1
     pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1
     raycaster.setFromCamera( pointer, camera );
