@@ -47,16 +47,14 @@ const Photosphere = () => {
   sphere.scale.y = 100
   sphere.scale.z = 100
 
-
   const raycaster = new THREE.Raycaster()
   const pointer = new THREE.Vector2()
 
   const onPointerMove = event => {
-    const canvas = document.getElementById("canvas")
+    let top = $('#canvas').position().top
     pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1
-    pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1
-    raycaster.setFromCamera( pointer, camera );
-  
+    pointer.y = - ( (event.clientY-top+window.scrollY) / window.innerHeight ) * 2 + 1
+    raycaster.setFromCamera( pointer, camera )
     const intersects = raycaster.intersectObjects( scene.children )
     if(intersects[0].object.name === "sphere"){
       pointName = 'null'
@@ -74,7 +72,7 @@ const Photosphere = () => {
     controls.update()
     controls.rotateSpeed = -0.25
   }
-
+  
   animate()
 
   const createPoint = (props) => {

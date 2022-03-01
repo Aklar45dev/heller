@@ -70,10 +70,6 @@ const Map = () => {
 
   },[])
 
-  const Console = log => {
-    console.log(log)
-  }
-
   return (
     <div className="App">
       <div className="container">

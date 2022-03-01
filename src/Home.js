@@ -1,14 +1,37 @@
 import './App.css'
+import React, { useRef, useState } from 'react'
 import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom'
+import Lottie from "lottie-react"
+import blob from "./Anim/blob.json"
 
 const Home = () => {
 
+  const lottieRef = useRef()
+  const [playing, setPlaying] = useState(true)
+
+  const pause = () => {
+    if(playing){
+      lottieRef.current.pause()
+      setPlaying(false)
+    }
+    if(!playing){
+      lottieRef.current.play()
+      setPlaying(true)
+    }
+  }
+
   return (
-    <div className="menu-container">
-      <Link className="link-menu" to="/map">Map</Link>
-      <Link className="link-menu" to="/photosphere">Photosphere</Link>
-      <Link className="link-menu" to="/podcast">Podcast</Link>
-      <Link className="link-menu" to="/interview">Interview</Link>
+    <div>
+      <div className="menu-container">
+        <button onClick={() => pause()}>Menu</button>
+        <Link className="link-menu" to="/map">Map</Link>
+        <Link className="link-menu" to="/photosphere">Photosphere</Link>
+        <Link className="link-menu" to="/podcast">Podcast</Link>
+        <Link className="link-menu" to="/interview">Interview</Link>
+      </div>
+      <div className="lottieBG">
+        <Lottie animationData={blob} loop={true}  lottieRef={lottieRef}/>
+      </div>
     </div>
   )
 }
