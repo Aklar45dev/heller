@@ -27,22 +27,36 @@ canvas {
 .logo {
   color:aquamarine; 
   text-decoration: none;
-  font-weight: 400;
-  font-size: 1.5em;
-  margin: 0.5em;
   position: fixed;
+  margin: 2.5em;
   top: 0;
+  z-index: 100;
+  width: 10em;
+  height: auto;
+}
+
+.logo-home{
+  width: 17em;
+  margin-left: 0em;
+  margin-right: 0em;
+}
+
+.logo-container-center {
+  display: flex;
+  justify-content: center;
 }
 
 .menu-container{
+  position: absolute;
   display: flex;
-  height: 1200px;
+  top: 40%;
   width: 100%;
   justify-content: space-around;
   align-items: center;
 }
 
 .link-menu {
+  font-family: 'Montserrat', sans-serif;
   color:aquamarine; 
   text-decoration: none;
   font-weight: 400;
@@ -51,11 +65,15 @@ canvas {
 }
 
 .page-title-font {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.12em;
   color:aquamarine; 
   font-weight: 400;
-  font-size: 2em;
+  font-size: 1.8em;
   margin: 0.5em;
   text-align: center;
+  margin-top: 6em;
+  margin-bottom: 3em;
 }
 
 #card {
@@ -102,12 +120,14 @@ canvas {
 }
 
 .card-content h2 {
+  font-family: 'Montserrat', sans-serif;
   color:aquamarine; 
   font-weight: 400;
   font-size: 3em;
 }
 
 .card-content p {
+  font-family: 'Montserrat', sans-serif;
   color:rgb(255, 255, 255); 
   font-weight: 400;
   font-size: 1.5em;
@@ -136,13 +156,13 @@ canvas {
 }
 
 .container {
-  margin-top: 1.5em;
+  margin-top: 7em;
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 50%;
   display: grid;
   z-index: 20;
-  background-color:rgba(0, 0, 0, 1)
+  background-color:rgba(0, 0, 0, 0)
 }
 
 .element{
@@ -150,24 +170,24 @@ canvas {
 }
 
 #red{
-  background-color: red;
+  background-color: blue;
   display: list-item;
 }
 
 #yellow{
   display: list-item;
-  background-color: yellow;
+  background-color: white;
 }
 
 #green{
   display: list-item;
-  background-color: green;
+  background-color: red;
 }
 
 .lottieBG{
   position: absolute;
-  top: 0;
-  width: 50%;
+  top: 25%;
+  width: 100%;
   z-index: -1;
   display: flex;
 }

@@ -1,13 +1,16 @@
 import './App.css'
 import React, { useEffect, useRef } from 'react'
 import $ from 'jquery'
-import Lottie from "lottie-react"
-import jump from "./Anim/jump.json"
 
 const Podcast = () => {
 
   const audio = new Audio("/steel.mp3")
   const lottieRef = useRef()
+
+  $(() => {
+    $('#logo-container').removeClass("logo-container-center")
+    $('#logo').removeClass("logo-home")
+  })
 
   useEffect(() => {
     $('#pause').css({display: 'none'})
@@ -34,7 +37,6 @@ const Podcast = () => {
         <button id="play" onClick={() => play()}>PLAY</button>
         <button id="pause" onClick={() => pause()}>STOP</button>
       </div>
-      <Lottie animationData={jump} loop={true} lottieRef={lottieRef}/>
     </div>
   )
 }

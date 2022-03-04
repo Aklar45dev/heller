@@ -6,6 +6,13 @@ import $ from 'jquery'
 
 const Photosphere = () => {
 
+  $(() => {
+    $('#logo').removeClass("logo-home")
+    $('#logo-container').removeClass("logo-container-center")
+    window.addEventListener( 'pointermove', onPointerMove )
+    window.addEventListener("mousedown", showCard)
+  })
+
   useEffect(() => {
     const container = document.getElementById( 'canvas' )
     container.appendChild( renderer.domElement )
@@ -51,18 +58,20 @@ const Photosphere = () => {
   const pointer = new THREE.Vector2()
 
   const onPointerMove = event => {
-    let top = $('#canvas').position().top
-    pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1
-    pointer.y = - ( (event.clientY-top+window.scrollY) / window.innerHeight ) * 2 + 1
-    raycaster.setFromCamera( pointer, camera )
-    const intersects = raycaster.intersectObjects( scene.children )
-    if(intersects[0].object.name === "sphere"){
-      pointName = 'null'
-      return
-    }
-    else{
-      pointName = intersects[0].object.name
-      return
+    if(window.location.pathname === "/photosphere"){
+      let top = $('#canvas').position().top
+      pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1
+      pointer.y = - ( (event.clientY-top+window.scrollY) / window.innerHeight ) * 2 + 1
+      raycaster.setFromCamera( pointer, camera )
+      const intersects = raycaster.intersectObjects( scene.children )
+      if(intersects[0].object.name === "sphere"){
+        pointName = 'null'
+        return
+      }
+      else{
+        pointName = intersects[0].object.name
+        return
+      }
     }
   }
 
@@ -78,6 +87,8 @@ const Photosphere = () => {
   const createPoint = (props) => {
     const geometry = new THREE.PlaneGeometry( 1, 1 )
     const alpha = new THREE.TextureLoader().load( props.src )
+    //const alpha = new THREE.TextureLoader().load( './circle.png' )
+    
     const material = new THREE.SpriteMaterial( { alphaMap: alpha, map: alpha } )
     material.transparent = true
     const plane = new THREE.Sprite( material )
@@ -102,9 +113,6 @@ const Photosphere = () => {
   const hideCard = () => {
     $("#card").css({display: 'none'})
   }
-
-  window.addEventListener( 'pointermove', onPointerMove )
-  window.addEventListener("mousedown", showCard)
 
   return (
     <div>
