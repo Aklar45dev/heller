@@ -17,8 +17,10 @@ const Photosphere = () => {
     const container = document.getElementById( 'canvas' )
     container.appendChild( renderer.domElement )
     pointData.forEach(item => createPoint(item))
+    $('.page').fadeOut(0).fadeIn(1000)
+    $('.logo').fadeOut(0).fadeIn(1000)
   },[])
-  
+
   const [point, setPoint] = useState({})
 
   const pointData = [{name: "plane1", x: 0, y: -2, z: -10, src: "./mask.png", title: 'Title 1', text: "Text 1"},
@@ -115,7 +117,7 @@ const Photosphere = () => {
   }
 
   return (
-    <div>
+    <div className="page">
       <div className="page-title-font">L'ENFOUISSEMENT DE LA BIÈVRE</div>
       <div>
         <div id="card">

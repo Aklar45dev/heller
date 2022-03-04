@@ -14,7 +14,8 @@ const Podcast = () => {
 
   useEffect(() => {
     $('#pause').css({display: 'none'})
-
+    $('.page').fadeOut(0).fadeIn(1000)
+    $('.logo').fadeOut(0).fadeIn(1000)
   },[])
 
   const play = () => {
@@ -30,7 +31,7 @@ const Podcast = () => {
   }
 
   return (
-    <div>
+    <div className="page">
       <div className="page-title-font">UN ESPACE POUR LES SPORTIFS</div>
       <img className="podcastIMG" src="./soccer.jpg" alt="podcast"/>
       <div className='play-btn'>

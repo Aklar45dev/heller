@@ -1,5 +1,5 @@
 import './App.css'
-import React, { useRef, useState } from 'react'
+import React, { useEffect } from 'react'
 import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom'
 import Lottie from "lottie-react"
 import blob from "./Anim/lines.json"
@@ -7,35 +7,33 @@ import $ from "jquery"
 
 const Home = () => {
 
-  const lottieRef = useRef()
-  const [playing, setPlaying] = useState(true)
-
   $(() => {
     $('#logo').addClass("logo-home")
     $('#logo-container').addClass("logo-container-center")
+    /*setInterval(function() {
+      $('#map-link').slideUp('500', function() {
+          $('#map-link').slideDown('500');
+      });
+  }, 1000);*/
+  
   })
-
-  const pause = () => {
-    if(playing){
-      lottieRef.current.pause()
-      setPlaying(false)
-    }
-    if(!playing){
-      lottieRef.current.play()
-      setPlaying(true)
-    }
-  }
+  
+  useEffect(() => {
+    $('.page').fadeOut(0).fadeIn(1000)
+    $('.logo').fadeOut(0).fadeIn(1000)
+    $('#MapView').css({display: 'none'})
+  },[])
 
   return (
-    <div>
+    <div className="page">
       <div className="menu-container">
-        <Link className="link-menu" to="/map">Map</Link>
-        <Link className="link-menu" to="/photosphere">Photosphere</Link>
-        <Link className="link-menu" to="/podcast">Podcast</Link>
-        <Link className="link-menu" to="/interview">Interview</Link>
+        <Link id="map-link" className="link-menu" to="/map">Map</Link>
+        <Link id="photo-link" className="link-menu" to="/photosphere">Photosphere</Link>
+        <Link id="pod-link" className="link-menu" to="/podcast">Podcast</Link>
+        <Link id="inter-link" className="link-menu" to="/interview">Interview</Link>
       </div>
       <div className="lottieBG">
-        <Lottie animationData={blob} loop={true}  lottieRef={lottieRef}/>
+        <Lottie animationData={blob} loop={true}/>
       </div>
     </div>
   )

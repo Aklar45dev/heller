@@ -2,6 +2,7 @@ import './App.css'
 import Home from './Home'
 import Photosphere from './Photosphere'
 import Map from './Map'
+import MapView from './MapView'
 import Podcast from './Podcast'
 import Interview from './Interview'
 import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom'
@@ -13,8 +14,12 @@ const App = () => {
 
   const [path, setPath] = useState('/')
 
+  $(() => {
+    $('#MapView').css({display: 'none'})
+  })
+
   useEffect(() => {
-    
+
   })
   
   return (
@@ -22,9 +27,12 @@ const App = () => {
       <div id="logo-container">
         <Link className="logo" id="logo" to="/"><IconMenu/></Link>
       </div>
+      <div id="MapView">
+        <MapView />
+      </div>
       <Switch>
         <Route path='/photosphere' component={Photosphere} />
-        <Route path='/map' component={Map} />
+        <Route path='/map'  component={Map}/>
         <Route path='/podcast' component={Podcast} />
         <Route path='/interview' component={Interview} />
         <Route path='/' component={Home} />
