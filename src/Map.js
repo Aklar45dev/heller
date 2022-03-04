@@ -13,7 +13,7 @@ const Map = () => {
   
   useEffect(() => {
 
-    //ScrollMagicPluginIndicator(ScrollMagic)
+    ScrollMagicPluginIndicator(ScrollMagic)
     const controller = new ScrollMagic.Controller()
   
     const Scene1 = new ScrollMagic.Scene({
@@ -23,11 +23,11 @@ const Map = () => {
       triggerHook: 0.5,
     })
     .setClassToggle('#project01', 'fade-in') //add class to project01
-    /*.addIndicators({
+    .addIndicators({
       name: "project01",
       colorStart: "orange",
       colorTrigger: 'orange'
-    })*/
+    })
     .addTo(controller)
 
     Scene1.on("progress",  event => {
@@ -41,12 +41,12 @@ const Map = () => {
       duration: '80%'
     })
     .setClassToggle('#project02', 'fade-in') //add class to project02
-    /*.addIndicators({
+    .addIndicators({
       name: "project02",
       colorStart: "white",
       colorTrigger: 'white'
       
-    })*/
+    })
     .addTo(controller)
 
     Scene2.on("progress",  event => {
@@ -60,12 +60,12 @@ const Map = () => {
       duration: '80%'
     })
     .setClassToggle('#project03', 'fade-in') //add class to project02
-    /*.addIndicators({
+    .addIndicators({
       name: "project03",
       colorStart: "white",
       colorTrigger: 'white'
       
-    })*/
+    })
     .addTo(controller)
 
     Scene3.on("progress",  event => {

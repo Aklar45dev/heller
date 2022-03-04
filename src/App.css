@@ -193,10 +193,12 @@ canvas {
 }
 
 .videoPlayer{
-  width: 80%;
   height: auto;
-  padding-left: 10%;
-  padding-right: 10%;
+}
+
+.video-container{
+  display: flex;
+  justify-content: center;
 }
 
 .podcastIMG{

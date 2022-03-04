@@ -5,7 +5,7 @@ import Map from './Map'
 import Podcast from './Podcast'
 import Interview from './Interview'
 import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom'
-import { ReactComponent as IconMenu } from './anim/logo.svg'
+import { ReactComponent as IconMenu } from './Anim/logo.svg'
 import $ from "jquery"
 import React, { useState, useEffect } from 'react'
 

@@ -2,7 +2,7 @@ import './App.css'
 import React, { useRef, useState } from 'react'
 import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom'
 import Lottie from "lottie-react"
-import blob from "./anim/lines.json"
+import blob from "./Anim/lines.json"
 import $ from "jquery"
 
 const Home = () => {
