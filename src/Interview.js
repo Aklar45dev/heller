@@ -1,5 +1,5 @@
 import './App.css'
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import $ from "jquery"
 
 const Interview = () => {
@@ -11,6 +11,7 @@ const Interview = () => {
 
   useEffect(() => {
     $('.page').fadeOut(0).fadeIn(1000)
+    $('#pause').css({display: 'none'})
     $('.logo').fadeOut(0).fadeIn(1000)
   })
 
@@ -18,7 +19,7 @@ const Interview = () => {
     <div className="page">
       <div className="page-title-font">RENAISSANCE D'UNE RIVIÈRE</div>
       <div className="video-container">
-        <video className="videoPlayer" src="https://cfp-secretariat.s3.us-east-2.amazonaws.com/y2meta.com+-+Capsule+secr%C3%A9tariat+-+Employeur.mp4" preload="auto" controls={true} />
+        <video id="videoRef" className="videoPlayer" src="https://cfp-secretariat.s3.us-east-2.amazonaws.com/y2meta.com+-+Capsule+secr%C3%A9tariat+-+Employeur.mp4" preload="auto" controls={true} />
       </div>
     </div>
   )

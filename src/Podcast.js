@@ -1,11 +1,10 @@
 import './App.css'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import $ from 'jquery'
 
 const Podcast = () => {
 
-  const audio = new Audio("/steel.mp3")
-  const lottieRef = useRef()
+  const audio = new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/steel.mp3")
 
   $(() => {
     $('#logo-container').removeClass("logo-container-center")
@@ -33,10 +32,13 @@ const Podcast = () => {
   return (
     <div className="page">
       <div className="page-title-font">UN ESPACE POUR LES SPORTIFS</div>
-      <img className="podcastIMG" src="./soccer.jpg" alt="podcast"/>
-      <div className='play-btn'>
-        <button id="play" onClick={() => play()}>PLAY</button>
-        <button id="pause" onClick={() => pause()}>STOP</button>
+      <div className="pod-container">
+        <div className="pod-bg"/>
+        <div className='video-btns'>
+          <button id="play" onClick={() => play()}><img src="./play.png" /></button>
+          <button id="pause" onClick={() => pause()}><img src="./pause.png" /></button>
+        </div>
+        <img className="pod-img" src="./soccer.jpg" alt="podcast"/>
       </div>
     </div>
   )

@@ -5,6 +5,7 @@ import Map from './Map'
 import MapView from './MapView'
 import Podcast from './Podcast'
 import Interview from './Interview'
+import Footer from './Footer'
 import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom'
 import { ReactComponent as IconMenu } from './Anim/logo.svg'
 import $ from "jquery"
@@ -37,6 +38,7 @@ const App = () => {
         <Route path='/interview' component={Interview} />
         <Route path='/' component={Home} />
       </Switch>
+      <Footer/>
     </Router>
   )
 }
