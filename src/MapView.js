@@ -12,12 +12,12 @@ const MapView = () => {
 
     //scene00
     const Scene00 = new ScrollMagic.Scene({
-      triggerElement: '#project00',
+      triggerElement: '#project000',
       duration: '80%',
       reverse: true,
       triggerHook: 0.5,
     })
-    .setClassToggle('#project00', 'fade-in') //add class to project01
+    .setClassToggle('#project000', 'fade-in') //add class to project01
     .addTo(controller)
 
     Scene00.on("progress",  event => {
@@ -26,12 +26,12 @@ const MapView = () => {
 
     //scene0
     const Scene0 = new ScrollMagic.Scene({
-      triggerElement: '#project0',
+      triggerElement: '#project00',
       duration: '80%',
       reverse: true,
       triggerHook: 0.5,
     })
-    .setClassToggle('#project0', 'fade-in') //add class to project01
+    .setClassToggle('#project00', 'fade-in') //add class to project01
     .addTo(controller)
 
     Scene0.on("progress",  event => {
@@ -145,8 +145,8 @@ const MapView = () => {
         <div className="page-title-font-map">AUX ORIGINES DU PARC</div>
         <div className="map-container">
           <div className="map-img-container">
-            <img src="./soccer.jpg"  id="el-0"/>
-            <img src='./map.png' id="el-00"/>
+            <img src="./soccer.jpg"  id="el-00"/>
+            <img src='./map.png' id="el-0"/>
           </div>
           <div className="map-text-container">
             <div className="map-el" id="el-1"><span className="date">1938</span><br/><span className="map-title">Acquisition</span></div>

@@ -13,16 +13,22 @@ import React, { useState, useEffect } from 'react'
 
 const App = () => {
 
-  const [path, setPath] = useState('/')
-
   $(() => {
     $('#MapView').css({display: 'none'})
   })
 
   useEffect(() => {
-
-  })
+    getData()
+  },[])
   
+  const getData = async() => {
+    await fetch('https://y7lr4l3pqd.execute-api.eu-west-3.amazonaws.com/Prod')
+      .then(response => response.json())
+      .then(data => {
+          console.log(data)
+      })
+    }
+
   return (
     <Router>
       <div id="logo-container">
