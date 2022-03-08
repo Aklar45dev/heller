@@ -69,10 +69,12 @@ const Photosphere = () => {
       raycaster.setFromCamera( pointer, camera )
       const intersects = raycaster.intersectObjects( scene.children )
       if(intersects[0].object.name === "sphere"){
+        $('body').css('cursor', 'default')
         pointName = 'null'
         return
       }
       else{
+        $('body').css('cursor', 'pointer')
         pointName = intersects[0].object.name
         return
       }

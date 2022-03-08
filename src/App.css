@@ -17,6 +17,7 @@ time, mark, audio, video {
 }
 
 html{
+  scroll-behavior: smooth;
   background-color: rgb(46, 46, 81);
 }
 
@@ -66,18 +67,46 @@ html{
   font-size: 1.8em;
   margin: 0.5em;
   text-align: center;
-  margin-top: 6em;
+  margin-top: 4em;
   margin-bottom: 3em;
+}
+
+.page-title-font-map {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.12em;
+  color:rgb(112, 255, 213); 
+  font-weight: 400;
+  font-size: 1.8em;
+  margin: 0.5em;
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: 2.5em;
+}
+
+.down-arrow{
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.12em;
+  color:rgb(112, 255, 213); 
+  font-weight: 400;
+  font-size: 3.8em;
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: 2.5em;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  animation: pulse 1s ease-in-out infinite;
 }
 
 #card {
   position: fixed;
-  width: 50%;
+  width: 70%;
   display: none;
-  margin-left: 25%;
-  margin-right: 25%;
-  height: auto;
-  transform: translateY(-20%);
+  margin-left: 15%;
+  margin-right: 15%;
+  transform: translateY(-10%);
+  height: 60%;
 }
 
 .close-btn {
@@ -94,6 +123,7 @@ html{
 
 .close-btn:hover {
   opacity: 0.5;
+  cursor: pointer;
 }
 
 .close-btn:active {
@@ -102,7 +132,7 @@ html{
 
 .card {
   display: flex;
-  background-color:rgba(46, 46, 81, 0.6);
+  background-color:rgba(24, 24, 24, 0.8);
   padding: 2em;
   padding-top: 6em;
   padding-bottom: 6em;
@@ -144,7 +174,7 @@ html{
 }
 
 .project {
-  height: 800px;
+  height: 500px;
   background-color: rgba(0, 0, 0, 0);
   margin: 1em;
   padding-top: 2em;
@@ -200,13 +230,16 @@ html{
   height: 100%;
   box-shadow: 5px 5px 20px #00000070;
   border-radius: 1em;
-
 }
 
 .video-container{
   display: flex;
   justify-content: center;
   align-content: center;
+}
+
+video{
+  width: 60%;
 }
 
 .pod-container{
@@ -231,7 +264,7 @@ html{
   box-shadow: 5px 5px 20px #00000070;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 1em;
-  height: 50%;
+  height: 40%;
   margin-left: 25%;
   margin-right: 25%;
 }
@@ -255,25 +288,37 @@ html{
 
 @keyframes float1 {
   0% {
-    transform: translatey(10px);
+    transform: translatey(10px) rotate(-20deg);
  }
   50% {
-    transform: translatey(-10px);
+    transform: translatey(-10px) rotate(-20deg);
  }
   100% {
-    transform: translatey(10px);
+    transform: translatey(10px) rotate(-20deg);
  }
 }
 
 @keyframes float2 {
   0% {
-    transform: translatey(-10px);
- }
+    transform: translatey(-10px) rotate(-20deg);
+  }
   50% {
-    transform: translatey(10px);
+    transform: translatey(10px) rotate(-20deg);
  }
   100% {
-    transform: translatey(-10px);
+    transform: translatey(-10px) rotate(-20deg);
+ }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+ }
+  50% {
+    transform: scale(1);
+ }
+  100% {
+    transform: scale(0.8);
  }
 }
 
@@ -317,3 +362,43 @@ footer p {
   font-size: 1em;
   font-weight: 500;
 }
+
+.map-text-container{
+  display: flex;
+  align-items: flex-end;
+  flex-direction:column;
+  min-width: 25%;
+}
+
+.date{
+  font-family: 'Montserrat', sans-serif;
+  color:rgb(255, 255, 255);
+  font-weight: 700;
+}
+
+.map-title{
+  font-family: 'Montserrat', sans-serif;
+  color:rgb(255, 255, 255);
+  font-weight: 500;
+}
+
+.map-el{
+  margin-top: 3em;
+}
+
+.map-container{
+  display: flex;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.map-img-container{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.map-img-container img{
+  margin-right: 30%;
+}
+

@@ -27,10 +27,10 @@ const Home = () => {
   return (
     <div className="page">
       <div className="menu-container">
-        <Link id="map-link" className="link-menu" to="/map">Map</Link>
-        <Link id="photo-link" className="link-menu" to="/photosphere">Photosphere</Link>
-        <Link id="pod-link" className="link-menu" to="/podcast">Podcast</Link>
-        <Link id="inter-link" className="link-menu" to="/interview">Interview</Link>
+        <Link id="map-link" className="link-menu" to="/map">Aux origines<br/>du parc</Link>
+        <Link id="photo-link" className="link-menu" to="/photosphere">Historique<br/>de l'enfouissement<br/>de la briève</Link>
+        <Link id="pod-link" className="link-menu" to="/podcast">Un espace<br/>pour les sportifs</Link>
+        <Link id="inter-link" className="link-menu" to="/interview">Renaissance<br/>d'une rivière :<br/>La réouverture<br/>de la brièvre</Link>
       </div>
       <div className="lottieBG">
         <Lottie animationData={blob} loop={true}/>
