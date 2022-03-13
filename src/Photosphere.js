@@ -39,7 +39,7 @@ const Photosphere = () => {
     dans Antony par la rue du Pont-de-Pierre à la hauteur de la coulée verte. Elle poursuit sa route à 
     travers le parc Heller jusqu’à la rue de l’Abreuvoir avant de passer sous la voie ferrée et de gagner la 
     RD 920.`},
-    {name: "plane4", x: 6, y: 1, z: 0, src: "./mask.png", img: [{original: './img/13Fi19.jpg'},{original: './img/20.jpg'},{original: './img/IMG703.jpg'}], title: `LES LAVOIRS`, text: `La Ville mettait à la disposition des habitants des lavoirs pour effectuer leurs « grandes lessives ».
+    {name: "plane4", x: 6, y: 1, z: 0, src: "./mask.png", img: [{original: './img/13Fi19.jpg'},{original: './img/20.jpg'},{original: './img/703.jpg'}], title: `LES LAVOIRS`, text: `La Ville mettait à la disposition des habitants des lavoirs pour effectuer leurs « grandes lessives ».
     Après la première guerre mondiale, on en comptait trois : les lavoirs du Moulin, du ru des Morteaux 
     et de la Grande Pierre. En effet, laver son linge dans une maison posait de nombreux problèmes 
     (vapeur humidifiant les murs, écoulement de l’eau) alors ces « buées » étaient réalisées deux fois par 
@@ -47,7 +47,7 @@ const Photosphere = () => {
     et savons. 1er et 2e
     jour : les draps puis le linge de table. 3e et 4e jour : les torchons puis les chemises 
     et les pantalons.`},
-    {name: "plane5", x: 4, y: -1, z: 0, src: "./mask.png", img: [{original: './img/artnouveaubievre.jpg'},{original: './img/La_Bièvre___Passage_Moret_[...]Atget_Eugène_btv1b10517901m_1.jpeg'},{original: './img/mégissiers.jpeg'}], title: `LES MÉTIERS DE LA BIÈVRE`, text: `Vers la fin du XVIIe
+    {name: "plane5", x: 4, y: -1, z: 0, src: "./mask.png", img: [{original: './img/artnouveaubievre.jpg'},{original: './img/LaBièvre.jpg'},{original: './img/mégissiers.jpg'}], title: `LES MÉTIERS DE LA BIÈVRE`, text: `Vers la fin du XVIIe
     siècle, de nombreux corps de métier nécessitant une utilisation continue de l'eau 
     s'installent sur les bords de la Bièvre : teintureries, blanchisseries, tanneries, mégisseries et riverains 
     se partagent l'eau de la rivière, puis les activités industrielles se diversifient : entrepôts et usines 
