@@ -9,17 +9,23 @@ import Footer from './Footer'
 import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom'
 import { ReactComponent as IconMenu } from './Anim/logo.svg'
 import $ from "jquery"
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 const App = () => {
+
+  const audio = new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/steel.mp3")
 
   $(() => {
     $('#MapView').css({display: 'none'})
   })
 
   useEffect(() => {
-    getData()
+    //getData()
   },[])
+
+  const pauseAudio = () =>{
+    audio.pause()
+  }
   
   const getData = async() => {
     await fetch('https://y7lr4l3pqd.execute-api.eu-west-3.amazonaws.com/Prod')
@@ -32,7 +38,7 @@ const App = () => {
   return (
     <Router>
       <div id="logo-container">
-        <Link className="logo" id="logo" to="/"><IconMenu/></Link>
+        <Link className="logo" id="logo" onClick={() => pauseAudio()} to="/"><IconMenu/></Link>
       </div>
       <div id="MapView">
         <MapView />
@@ -40,7 +46,7 @@ const App = () => {
       <Switch>
         <Route path='/photosphere' component={Photosphere} />
         <Route path='/map'  component={Map}/>
-        <Route path='/podcast' component={Podcast} />
+        <Route path='/podcast' component={() => <Podcast lecteur={audio} />} />
         <Route path='/interview' component={Interview} />
         <Route path='/' component={Home} />
       </Switch>

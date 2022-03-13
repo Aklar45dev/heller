@@ -2,9 +2,7 @@ import './App.css'
 import React, { useEffect } from 'react'
 import $ from 'jquery'
 
-const Podcast = () => {
-
-  const audio = new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/steel.mp3")
+const Podcast = (props) => {
 
   $(() => {
     $('#logo-container').removeClass("logo-container-center")
@@ -18,13 +16,13 @@ const Podcast = () => {
   },[])
 
   const play = () => {
-    audio.play()
+    props.lecteur.play()
     $('#pause').css({display: 'block'})
     $('#play').css({display: 'none'})
   }
 
   const pause = () => {
-    audio.pause()
+    props.lecteur.pause()
     $('#pause').css({display: 'none'})
     $('#play').css({display: 'block'})
   }

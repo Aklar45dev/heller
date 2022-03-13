@@ -10,12 +10,7 @@ const Home = () => {
   $(() => {
     $('#logo').addClass("logo-home")
     $('#logo-container').addClass("logo-container-center")
-    /*setInterval(function() {
-      $('#map-link').slideUp('500', function() {
-          $('#map-link').slideDown('500');
-      });
-  }, 1000);*/
-  
+    $("body").removeClass("none")
   })
   
   useEffect(() => {
