@@ -27,7 +27,7 @@ const Photosphere = () => {
     {name: "plane1", x: 0, y: 1, z:-4, src: "./mask.png", img: [{original: './img/curage.jpg'}], 
     title: `LE CURAGE`, text: `Curer la Bièvre était une obligation imposée aux habitants par la nature et par la loi. Cette opération avait pour 
     but de préserver la végétation et la qualité des eaux, de consolider les berges, de limiter les crues.`},
-    {name: "plane2", x: -4, y:-1, z:0, src: "./mask.png", img: [{original: './img/inondation.jpeg'},{original: './img/inondation2.jpeg'},{original: './img/inondation3.jpeg'},{original: './img/inondation4.jpeg'}], title: `INONDATIONS À ANTONY`, text: `Caves inondées, terrains immergés, rues transformées en canaux… Le dimanche 6 mai 1928, Antony 
+    {name: "plane2", x: -4, y:-1, z:0, src: "./mask.png", img: [{original: './img/inondation.jpg'},{original: './img/inondation2.jpg'},{original: './img/inondation3.jpg'},{original: './img/inondation4.jpg'}], title: `INONDATIONS À ANTONY`, text: `Caves inondées, terrains immergés, rues transformées en canaux… Le dimanche 6 mai 1928, Antony 
     vit son inondation la plus grave avec près de 20 ha submergés et 150 maisons envahies. Les eaux 
     montent à plus de 10 cm par heure et inondent les rues des Prés Coustou et Prosper-Legouté, 
     l’avenue Jean-Monnet, le lotissement Michalon, l’impasse Trudon. D’importants moyens sont 
@@ -35,7 +35,7 @@ const Photosphere = () => {
     fluviale et ses bachots. Pompiers et militaires, de l’eau jusqu’aux genoux, transportent de jeunes 
     enfants et leurs effets personnels sur leurs épaules vers un abri. Le niveau de la Bièvre ne redescend 
     que le lundi après-midi.`},
-    {name: "plane3", x: 5, y: 1, z: 2, src: "./mask.png", img: [{original: './img/7_5_28_inondations_à_Antony_[la_[...]Agence_Rol_btv1b53200690r_1.jpeg'},{original: './img/13Fi16.jpg'},{original: './img/14Fi34.jpg'},{original: './img/20220303140905_00001.jpg'},{original: './img/La_Technique_sanitaire_et_municipale_[...]Association_générale_bpt6k9608484t_12.jpg'},{original: './img/PLAN CARTE archive antony.png'}], title: `LA BIÈVRE À ANTONY`, text: `Longue de 35 km, la Bièvre, qui prend sa source à Guyancourt, traverse 15 communes. Elle entre 
+    {name: "plane3", x: 5, y: 1, z: 2, src: "./mask.png", img: [{original: './img/7.jpg'},{original: './img/13Fi16.jpg'},{original: './img/14Fi34.jpg'},{original: './img/20220303140905_00001.jpg'},{original: './img/La.jpg'},{original: './img/PLAN CARTE archive antony.png'}], title: `LA BIÈVRE À ANTONY`, text: `Longue de 35 km, la Bièvre, qui prend sa source à Guyancourt, traverse 15 communes. Elle entre 
     dans Antony par la rue du Pont-de-Pierre à la hauteur de la coulée verte. Elle poursuit sa route à 
     travers le parc Heller jusqu’à la rue de l’Abreuvoir avant de passer sous la voie ferrée et de gagner la 
     RD 920.`},
@@ -54,7 +54,7 @@ const Photosphere = () => {
     s'installent à leur tour. Cette concentration d'activités entraîne rapidement une pollution des eaux de 
     la rivière. Tandis que les particuliers y vident détritus et excréments, les artisans y déversent produits 
     toxiques, déchets, eaux savonneuses et restes d'animaux.`},
-    {name: "plane6", x: 6, y: 0, z: -2, src: "./mask.png", img: [{original: './img/03.jpg'},{original: './img/i20.bmp'},{original: './img/k16.bmp'},{original: './img/k20.bmp'}], title: `LA PÊCHE`, text: `Les amateurs de pêche étaient nombreux à se retrouver sur les rives de la Bièvre pour récupérer 
+    {name: "plane6", x: 6, y: 0, z: -2, src: "./mask.png", img: [{original: './img/03.jpg'},{original: './img/i20.jpg'},{original: './img/k16.jpg'},{original: './img/k20.jpg'}], title: `LA PÊCHE`, text: `Les amateurs de pêche étaient nombreux à se retrouver sur les rives de la Bièvre pour récupérer 
     dans leurs filets des gardons, écrevisses, goujons et brochets.`}
   ]
 
