@@ -7,7 +7,6 @@ const Card = props => {
   
   const hideCard = () => {
     $(`#${props.point.name}`).css({display: 'none'})
-    $("body").css({overflowY: 'scroll'})
     props.unhide()
   }
   

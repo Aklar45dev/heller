@@ -2,11 +2,13 @@ import './App.css'
 import { useEffect } from 'react'
 import $ from 'jquery'
 
-const Map = () => {
+const Map = props => {
 
   $(() => {
     $('#logo').removeClass("logo-home")
+    $('#consul').css({display: 'block'})
     $('#logo-container').removeClass("logo-container-center")
+    //props.lecteur.play()
   })
   
   
@@ -17,7 +19,9 @@ const Map = () => {
   },[])
   
   return (
-    <div/>
+    <div>
+
+    </div>
   )
 }
 

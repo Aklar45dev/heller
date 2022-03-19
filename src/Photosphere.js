@@ -5,14 +5,16 @@ import { useEffect, useState } from 'react'
 import Card from './Card'
 import $ from 'jquery'
 
-const Photosphere = () => {
+const Photosphere = props => {
 
   $(() => {
     $('#logo').removeClass("logo-home")
+    $('#consul').css({display: 'block'})
     $('#logo-container').removeClass("logo-container-center")
     window.addEventListener( 'pointermove', onPointerMove )
     window.addEventListener("mousedown", showCard)
-    $("body").addClass("none")
+    //props.lecteur.play()
+    $('body').css({overflow: 'hidden'})
   })
   
   useEffect(() => {
@@ -24,10 +26,11 @@ const Photosphere = () => {
   },[])
 
   const pointData = [
-    {name: "plane1", x: 0, y: 1, z:-4, src: "./mask.png", img: [{original: './img/curage.jpg'}], 
-    title: `LE CURAGE`, text: `Curer la Bièvre était une obligation imposée aux habitants par la nature et par la loi. Cette opération avait pour 
-    but de préserver la végétation et la qualité des eaux, de consolider les berges, de limiter les crues.`},
-    {name: "plane2", x: -4, y:-1, z:0, src: "./mask.png", img: [{original: './img/inondation.jpg'},{original: './img/inondation2.jpg'},{original: './img/inondation3.jpg'},{original: './img/inondation4.jpg'}], title: `INONDATIONS À ANTONY`, text: `Caves inondées, terrains immergés, rues transformées en canaux… Le dimanche 6 mai 1928, Antony 
+    {name: "plane1", x: 0, y: 1, z:-4, src: "./img/page2/curage.png", img: [{original: './img/curage.jpg'}], 
+    title: `LE CURAGE`, text: `Curer la Bièvre était une obligation imposée aux habitants par la nature et par la loi. Cette opération 
+    avait pour but de préserver la végétation et la qualité des eaux, de consolider les berges, de limiter 
+    les crues.`},
+    {name: "plane2", x: -3, y:-1, z:1, src: "./img/page2/inondation.png", img: [{original: './img/inondations-01.jpg'},{original: './img/inondations-02.jpg'},{original: './img/inondations-03.jpg'},{original: './img/inondations-04.jpg'}], title: `INONDATIONS À ANTONY`, text: `Caves inondées, terrains immergés, rues transformées en canaux… Le dimanche 6 mai 1928, Antony 
     vit son inondation la plus grave avec près de 20 ha submergés et 150 maisons envahies. Les eaux 
     montent à plus de 10 cm par heure et inondent les rues des Prés Coustou et Prosper-Legouté, 
     l’avenue Jean-Monnet, le lotissement Michalon, l’impasse Trudon. D’importants moyens sont 
@@ -35,11 +38,11 @@ const Photosphere = () => {
     fluviale et ses bachots. Pompiers et militaires, de l’eau jusqu’aux genoux, transportent de jeunes 
     enfants et leurs effets personnels sur leurs épaules vers un abri. Le niveau de la Bièvre ne redescend 
     que le lundi après-midi.`},
-    {name: "plane3", x: 5, y: 1, z: 2, src: "./mask.png", img: [{original: './img/7.jpg'},{original: './img/13Fi16.jpg'},{original: './img/14Fi34.jpg'},{original: './img/20220303140905_00001.jpg'},{original: './img/La.jpg'},{original: './img/PLAN CARTE archive antony.png'}], title: `LA BIÈVRE À ANTONY`, text: `Longue de 35 km, la Bièvre, qui prend sa source à Guyancourt, traverse 15 communes. Elle entre 
+    {name: "plane3", x: 3, y: 0.1, z: 3, src: "./img/page2/bièvre-à-atony.png", img: [{original: './img/bievre-01.jpg'},{original: './img/bievre-02.jpg'},{original: './img/bievre-03.jpg'},{original: './img/bievre-04.jpg'}], title: `LA BIÈVRE À ANTONY`, text: `Longue de 35 km, la Bièvre, qui prend sa source à Guyancourt, traverse 15 communes. Elle entre 
     dans Antony par la rue du Pont-de-Pierre à la hauteur de la coulée verte. Elle poursuit sa route à 
     travers le parc Heller jusqu’à la rue de l’Abreuvoir avant de passer sous la voie ferrée et de gagner la 
     RD 920.`},
-    {name: "plane4", x: 6, y: 1, z: 0, src: "./mask.png", img: [{original: './img/13Fi19.jpg'},{original: './img/20.jpg'},{original: './img/703.jpg'}], title: `LES LAVOIRS`, text: `La Ville mettait à la disposition des habitants des lavoirs pour effectuer leurs « grandes lessives ».
+    {name: "plane4", x: -3, y: -0.5, z: -3, src: "./img/page2/lavoirs.png", img: [{original: './img/lavoir-01.jpg'},{original: './img/lavoir-02.jpg'},{original: './img/lavoir-03.jpg'}], title: `LES LAVOIRS`, text: `La Ville mettait à la disposition des habitants des lavoirs pour effectuer leurs « grandes lessives ».
     Après la première guerre mondiale, on en comptait trois : les lavoirs du Moulin, du ru des Morteaux 
     et de la Grande Pierre. En effet, laver son linge dans une maison posait de nombreux problèmes 
     (vapeur humidifiant les murs, écoulement de l’eau) alors ces « buées » étaient réalisées deux fois par 
@@ -47,15 +50,16 @@ const Photosphere = () => {
     et savons. 1er et 2e
     jour : les draps puis le linge de table. 3e et 4e jour : les torchons puis les chemises 
     et les pantalons.`},
-    {name: "plane5", x: 4, y: -1, z: 0, src: "./mask.png", img: [{original: './img/artnouveaubievre.jpg'},{original: './img/LaBièvre.jpg'},{original: './img/mégissiers.jpg'}], title: `LES MÉTIERS DE LA BIÈVRE`, text: `Vers la fin du XVIIe
+    {name: "plane5", x: 4, y: -1, z: 0, src: "./img/page2/métiers-de-la-bièvre.png", img: [{original: './img/metiers-bievre-01.jpg'},{original: './img/metiers-bievre-02.jpg'},{original: './img/metiers-bievre-03.jpg'}], title: `LES MÉTIERS DE LA BIÈVRE`, text: `Vers la fin du XVIIe
     siècle, de nombreux corps de métier nécessitant une utilisation continue de l'eau 
     s'installent sur les bords de la Bièvre : teintureries, blanchisseries, tanneries, mégisseries et riverains 
     se partagent l'eau de la rivière, puis les activités industrielles se diversifient : entrepôts et usines 
     s'installent à leur tour. Cette concentration d'activités entraîne rapidement une pollution des eaux de 
     la rivière. Tandis que les particuliers y vident détritus et excréments, les artisans y déversent produits 
     toxiques, déchets, eaux savonneuses et restes d'animaux.`},
-    {name: "plane6", x: 6, y: 0, z: -2, src: "./mask.png", img: [{original: './img/03.jpg'},{original: './img/i20.jpg'},{original: './img/k16.jpg'},{original: './img/k20.jpg'}], title: `LA PÊCHE`, text: `Les amateurs de pêche étaient nombreux à se retrouver sur les rives de la Bièvre pour récupérer 
-    dans leurs filets des gardons, écrevisses, goujons et brochets.`}
+    {name: "plane6", x: 3, y: -0.5, z: -3, src: "./img/page2/pêcheurs.png", img: [{original: './img/peche-01.jpg'},{original: './img/peche-02.jpg'},{original: './img/peche-03.jpg'}], title: `LA PÊCHE`, text: `Les amateurs de pêche étaient nombreux à se retrouver sur les rives de la Bièvre pour récupérer 
+    dans leurs filets des gardons, écrevisses, goujons et brochets.`},
+    {name: "plane7", x: -0.7, y: -0.1, z: 3, src: "./img/page2/étang-du-soleil.png", img: [{original: './img/etang-1.jpg'},{original: './img/etang-2.jpg'},{original: './img/etang-3.jpg'},{original: './img/etang-4.jpg'},{original: './img/etang-5.jpg'},{original: './img/etang-6.jpg'},{original: './img/etang-7.jpg'},{original: './img/etang-8.jpg'},{original: './img/etang-9.jpg'}], title: `L'ÉTANG DU SOLEIL`, text: `L'étang est en partie alimenté par une dérivation du ru des Godets. Il fut creusé à la pelle dans les années 1940 par un Antonien, Jean Proksa, qui agrandit avec son fils ce qui n’était à l’origine qu’une modeste mare. Le propriétaire attira ensuite les amateurs de canotage en proposant des barques à louer et ouvrit une guinguette : « Le Soleil d’Antony ». Elle ferma ses portes en 1975, année du décès de M. Proksa. Aujourd’hui, l’étang est en fin de vie. Des aérateurs ont été installés en  2017 pour offrir une oxygénation suffisante à la faune aquatique qui le peuple, mais ce n’est pas suffisant. Des analyses réalisées la même année ont révélé la présence d’hydrocarbure dans le sol et la vase présente dans l’eau représente à ce jour plus de la moitié du bassin.`}
   ]
 
 let pointName = "null"
@@ -89,7 +93,7 @@ let cardVisible = false
   sphere.scale.x = 100
   sphere.scale.y = 100
   sphere.scale.z = 100
-  sphere.rotation.y = 1.5
+  sphere.rotation.y = 1.4
 
   const raycaster = new THREE.Raycaster()
   const pointer = new THREE.Vector2()
@@ -148,9 +152,9 @@ let cardVisible = false
     planeIcon.position.x = props.x
     planeIcon.position.y = props.y
     planeIcon.position.z = props.z
-    planeIcon.scale.x = 0.5
-    planeIcon.scale.y = 0.5
-    planeIcon.scale.z = 0.5
+    planeIcon.scale.x = 1.2
+    planeIcon.scale.y = 1.2
+    planeIcon.scale.z = 1.2
     scene.add( plane )
     scene.add( planeIcon )
   }
@@ -158,7 +162,6 @@ let cardVisible = false
   const showCard = () => {
       if (pointName !== "null") {
         if(!cardVisible){
-          $("body").css({overflowY: 'hidden'})
           $(`#${pointName}`).css({display: 'flex'}).fadeOut(0).fadeIn(150)
           cardVisible = true
         }
@@ -171,10 +174,13 @@ let cardVisible = false
 
   
   return (
-    <div className="page scrollable-element">
-      <div className="page-title-font">L'ENFOUISSEMENT DE LA BIÈVRE</div>
+    <div className="page photosphere">
+      <div className="page-title-font">AU FIL DE L’EAU</div>
+      <div className="page-subtitle-font">ÉTANG, MARE ET RIVIÈRES</div>
       {pointData && pointData.map(point => <Card key={point.title} point={point} unhide={unhide} />)}
-      <div id="canvas"/>
+      <div id="canvas">
+        <img className='icon-360' src="./360.png" />
+      </div>
     </div>
   )
 }

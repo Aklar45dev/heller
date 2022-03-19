@@ -5,6 +5,7 @@ import Map from './Map'
 import MapView from './MapView'
 import Podcast from './Podcast'
 import Interview from './Interview'
+import Parallax from './Parallax'
 import Footer from './Footer'
 import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom'
 import { ReactComponent as IconMenu } from './Anim/logo.svg'
@@ -14,6 +15,9 @@ import React, { useEffect } from 'react'
 const App = () => {
 
   const audio = new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/steel.mp3")
+  const rugby = new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/RUGBY.mp3")
+  const sphereAudio = new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/fond-sonore.mp3")
+  sphereAudio.loop = true
 
   $(() => {
     $('#MapView').css({display: 'none'})
@@ -25,6 +29,8 @@ const App = () => {
 
   const pauseAudio = () =>{
     audio.pause()
+    rugby.pause()
+    sphereAudio.pause()
   }
   
   const getData = async() => {
@@ -38,19 +44,23 @@ const App = () => {
   return (
     <Router>
       <div id="logo-container">
-        <Link className="logo" id="logo" onClick={() => pauseAudio()} to="/"><IconMenu/></Link>
+        <Link className="logo" id="logo" onClick={() => pauseAudio()} to="/"><img src="./LOGO.png"/></Link>
+      </div>
+      <div id="consultation-container">
+        <Link className="consul" id="consul" to="/"><img src="./cosultation.png"/></Link>
       </div>
       <div id="MapView">
         <MapView />
       </div>
       <Switch>
-        <Route path='/photosphere' component={Photosphere} />
-        <Route path='/map'  component={Map}/>
+        <Route path='/parallax' component={() => <Parallax />} />
+        <Route path='/photosphere' component={() => <Photosphere lecteur={sphereAudio} />} />
+        <Route path='/map' component={() => <Map lecteur={sphereAudio} />}/>
         <Route path='/podcast' component={() => <Podcast lecteur={audio} />} />
         <Route path='/interview' component={Interview} />
         <Route path='/' component={Home} />
       </Switch>
-      <Footer/>
+      <Footer id="footer"/>
     </Router>
   )
 }
