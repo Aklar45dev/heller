@@ -25,7 +25,7 @@ const Photosphere = props => {
     $('.logo').fadeOut(0).fadeIn(1000)
   },[])
 
-  const audio = ['','','','','','',new Audio("./Etang-du-soleil.mp3")]
+  const audio = ['','','','','','',new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/etang-du-soleil.mp3")]
 
   const pointData = [
     {name: "1", x: 0, y: 1, z:-4, src: "./img/page2/curage.png", img: [{original: './img/curage.jpg'}], 
