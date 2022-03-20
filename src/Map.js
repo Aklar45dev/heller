@@ -11,14 +11,13 @@ const Map = props => {
     props.lecteur.play()
   })
 
-  let audioPlaying = true;
-  
-  
   useEffect(() => {
     $('.page').fadeOut(0).fadeIn(1000)
     $('.logo').fadeOut(0).fadeIn(1000)
     $('#MapView').css({display: 'block'})
   },[])
+  
+  let audioPlaying = true
 
   const toggleAudio = () => {
     if(audioPlaying){

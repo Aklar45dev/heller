@@ -2,11 +2,12 @@ import './App.css'
 import React, { useEffect } from 'react'
 import $ from "jquery"
 
-const Interview = () => {
+const Interview =props => {
 
   $(() => {
     $('#logo-container').removeClass("logo-container-center")
     $('#logo').removeClass("logo-home")
+    props.lecteur.pause()
   })
 
   useEffect(() => {
@@ -17,12 +18,10 @@ const Interview = () => {
   })
 
   return (
-    <div className="page">
+    <div className="page photosphere">
       <div className="page-title-font">RENAISSANCE D’UNE RIVIÈRE</div>
-      <div className="page-subtitle-font">LA RÉOUVERTURE DE LA BIÈVRE</div>
-      <div className="video-container">
-        <video id="videoRef" className="videoPlayer" src="https://heller-bucker.s3.eu-west-3.amazonaws.com/ITV-SMVB%26MGP_1.mp4" preload="auto" controls={true} />
-      </div>
+      <div className="page-subtitle-font">la réouverture de la bièvre</div>
+      <video className="videoPlayerInterview" src="https://heller-bucker.s3.eu-west-3.amazonaws.com/ITV-SMVB%26MGP_1.mp4" preload="auto" controls={true} autoPlay='autoPlay' />
     </div>
   )
 }

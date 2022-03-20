@@ -52,7 +52,10 @@ const MapView = () => {
     .addTo(controller)
 
     Scene3.on("progress",  event => {
+      $('#el-1').css({opacity: 0}) 
       $('#el-2').css({opacity: 0}) 
+      $('#img-1').css({opacity: 0}) 
+      $('#img-2').css({opacity: 0}) 
       $('#img-3').css({opacity: event.progress*2}) 
       $('#el-3').css({opacity: event.progress*2}) 
     })
@@ -68,7 +71,10 @@ const MapView = () => {
     .addTo(controller)
 
     Scene4.on("progress",  event => {
-      $('#el-3').css({opacity: 0}) 
+      $('#el-3').css({opacity: 0})
+      $('#img-3').css({opacity: 0})
+      $('#img-1').css({opacity: event.progress*2}) 
+      $('#img-2').css({opacity: event.progress*2}) 
       $('#img-4').css({opacity: event.progress*2}) 
       $('#el-4').css({opacity: event.progress*2}) 
     })
@@ -155,13 +161,16 @@ const MapView = () => {
 
   },[])
 
+  const scrollTop = () => {
+    $(window).scrollTop(0);
+  }
   
   return (
     <div className="page">
       <div className="down-arrow">↓</div>
       <div className="container">
         <div className="page-title-font">AUX ORIGINES DU PARC</div>
-        <div className="page-subtitle-font">DE 1860 À NOS JOURS</div>
+        <div className="page-subtitle-font">de 1860 à nos jours</div>
         <div className="map-container">
           <div className="map-img-container">
             <img className='map-img' src="./img/page1/1.png" id="img-1"/>
@@ -197,7 +206,7 @@ const MapView = () => {
         <div id="project07" className="project"/>
         <div id="project08" className="project"/>
         <div id="project09" className="project"/>
-      <div className="project" />
+        <button className='topBtn' onClick={() => scrollTop()}>haut</button>
     </div>
   )
 }

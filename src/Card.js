@@ -8,6 +8,9 @@ const Card = props => {
   const hideCard = () => {
     $(`#${props.point.name}`).css({display: 'none'})
     props.unhide()
+    if(props.audio[parseInt(props.point.name)-1] !== ""){
+      props.audio[parseInt(props.point.name)-1].pause()
+    }
   }
   
   return (
