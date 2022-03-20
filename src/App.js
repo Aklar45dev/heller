@@ -8,14 +8,12 @@ import Interview from './Interview'
 import Parallax from './Parallax'
 import Footer from './Footer'
 import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom'
-import { ReactComponent as IconMenu } from './Anim/logo.svg'
 import $ from "jquery"
 import React, { useEffect } from 'react'
 
 const App = () => {
 
   const audio = new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/steel.mp3")
-  const rugby = new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/RUGBY.mp3")
   const sphereAudio = new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/fond-sonore.mp3")
   sphereAudio.loop = true
 
@@ -29,7 +27,6 @@ const App = () => {
 
   const pauseAudio = () =>{
     audio.pause()
-    rugby.pause()
     sphereAudio.pause()
   }
   
@@ -56,7 +53,7 @@ const App = () => {
         <Route path='/parallax' component={() => <Parallax />} />
         <Route path='/photosphere' component={() => <Photosphere lecteur={sphereAudio} />} />
         <Route path='/map' component={() => <Map lecteur={sphereAudio} />}/>
-        <Route path='/podcast' component={() => <Podcast lecteur={audio} />} />
+        <Route path='/podcast' component={() => <Podcast />} />
         <Route path='/interview' component={Interview} />
         <Route path='/' component={Home} />
       </Switch>

@@ -2,7 +2,7 @@ import './App.css'
 import { useEffect } from 'react'
 import $ from 'jquery'
 
-const Parallax = props => {
+const Parallax = () => {
 
   $(() => {
     $('#consul').css({display: 'block'})
@@ -20,10 +20,10 @@ const Parallax = props => {
     let postionY = (event.pageY/window.innerHeight)-0.5
     let postionX = (event.pageX/window.innerWidth)-0.5
     $('#para-1').css('transform', `translate(${postionX*40}px,${postionY*40}px)`)
-    $('#para-2').css('transform', `translate(${postionX*30}px,${postionY*30}px)`)
-    $('#para-3').css('transform', `translate(${postionX*20}px,${postionY*20}px)`)
-    $('#para-4').css('transform', `translate(${postionX*10}px,${postionY*10}px)`)
-    $('#para-5').css('transform', `translate(${postionX*5}px,${postionY*5}px)`)
+    $('#para-2').css('transform', `translate(${postionX*10}px,${postionY*10}px)`)
+    $('#para-3').css('transform', `translate(${postionX*15}px,${postionY*15}px)`)
+    $('#para-4').css('transform', `translate(${postionX*20}px,${postionY*20}px)`)
+    $('#para-5').css('transform', `translate(${postionX*30}px,${postionY*30}px)`)
   }
 
 

@@ -12,8 +12,8 @@ const Photosphere = props => {
     $('#consul').css({display: 'block'})
     $('#logo-container').removeClass("logo-container-center")
     window.addEventListener( 'pointermove', onPointerMove )
-    window.addEventListener("mousedown", showCard)
-    //props.lecteur.play()
+    window.addEventListener("mouseup", showCard)
+    props.lecteur.play()
     $('body').css({overflow: 'hidden'})
   })
   
@@ -59,7 +59,7 @@ const Photosphere = props => {
     toxiques, déchets, eaux savonneuses et restes d'animaux.`},
     {name: "plane6", x: 3, y: -0.5, z: -3, src: "./img/page2/pêcheurs.png", img: [{original: './img/peche-01.jpg'},{original: './img/peche-02.jpg'},{original: './img/peche-03.jpg'}], title: `LA PÊCHE`, text: `Les amateurs de pêche étaient nombreux à se retrouver sur les rives de la Bièvre pour récupérer 
     dans leurs filets des gardons, écrevisses, goujons et brochets.`},
-    {name: "plane7", x: -0.7, y: -0.1, z: 3, src: "./img/page2/étang-du-soleil.png", img: [{original: './img/etang-1.jpg'},{original: './img/etang-2.jpg'},{original: './img/etang-3.jpg'},{original: './img/etang-4.jpg'},{original: './img/etang-5.jpg'},{original: './img/etang-6.jpg'},{original: './img/etang-7.jpg'},{original: './img/etang-8.jpg'},{original: './img/etang-9.jpg'}], title: `L'ÉTANG DU SOLEIL`, text: `L'étang est en partie alimenté par une dérivation du ru des Godets. Il fut creusé à la pelle dans les années 1940 par un Antonien, Jean Proksa, qui agrandit avec son fils ce qui n’était à l’origine qu’une modeste mare. Le propriétaire attira ensuite les amateurs de canotage en proposant des barques à louer et ouvrit une guinguette : « Le Soleil d’Antony ». Elle ferma ses portes en 1975, année du décès de M. Proksa. Aujourd’hui, l’étang est en fin de vie. Des aérateurs ont été installés en  2017 pour offrir une oxygénation suffisante à la faune aquatique qui le peuple, mais ce n’est pas suffisant. Des analyses réalisées la même année ont révélé la présence d’hydrocarbure dans le sol et la vase présente dans l’eau représente à ce jour plus de la moitié du bassin.`}
+    {name: "plane7", x: -0.7, y: -0.1, z: 3, src: "./img/page2/étang-du-soleil.png", img: [{original: './img/etang-1.jpg'},{original: './img/etang-2.jpg'},{original: './img/etang-3.jpg'},{original: './img/etang-4.jpg'},{original: './img/etang-5.jpg'},{original: './img/etang-6.jpg'},{original: './img/etang-7.jpg'},{original: './img/etang-9.jpg'}], title: `L'ÉTANG DU SOLEIL`, text: `L'étang est en partie alimenté par une dérivation du ru des Godets. Il fut creusé à la pelle dans les années 1940 par un Antonien, Jean Proksa, qui agrandit avec son fils ce qui n’était à l’origine qu’une modeste mare. Le propriétaire attira ensuite les amateurs de canotage en proposant des barques à louer et ouvrit une guinguette : « Le Soleil d’Antony ». Elle ferma ses portes en 1975, année du décès de M. Proksa. Aujourd’hui, l’étang est en fin de vie. Des aérateurs ont été installés en  2017 pour offrir une oxygénation suffisante à la faune aquatique qui le peuple, mais ce n’est pas suffisant. Des analyses réalisées la même année ont révélé la présence d’hydrocarbure dans le sol et la vase présente dans l’eau représente à ce jour plus de la moitié du bassin.`}
   ]
 
 let pointName = "null"
@@ -172,6 +172,21 @@ let cardVisible = false
     cardVisible = false
   }
 
+  let audioPlaying = true
+
+  const toggleAudio = () => {
+    if(audioPlaying){
+      props.lecteur.pause()
+      audioPlaying = false
+      $("#button-img").attr("src","./sound-off.png")
+      return
+    }
+    if(!audioPlaying){
+      $("#button-img").attr("src","./sound-on.png")
+      props.lecteur.play()
+      audioPlaying = true
+    }
+  }
   
   return (
     <div className="page photosphere">
@@ -181,6 +196,9 @@ let cardVisible = false
       <div id="canvas">
         <img className='icon-360' src="./360.png" />
       </div>
+      <button onClick={() => toggleAudio()} className="mute-btn">
+        <img id="button-img" src="./sound-on.png" />
+      </button>
     </div>
   )
 }
