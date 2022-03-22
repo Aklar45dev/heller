@@ -173,15 +173,15 @@ const MapView = () => {
         <div className="page-subtitle-font">de 1860 à nos jours</div>
         <div className="map-container">
           <div className="map-img-container">
-            <img className='map-img' src="./img/page1/1.png" id="img-1"/>
-            <img className='map-img' src="./img/page1/2.png" id="img-2"/>
-            <img className="map-img aquisition" src="./img/page1/3.jpg" id="img-3"/>
-            <img className='map-img' src="./img/page1/4.png" id="img-4"/>
-            <img className='map-img' src="./img/page1/5.png" id="img-5"/>
-            <img className='map-img' src="./img/page1/6.png" id="img-6"/>
-            <img className='map-img' src="./img/page1/7.png" id="img-7"/>
-            <img className='map-img' src="./img/page1/8.png" id="img-8"/>
-            <img className='map-img' src="./img/page1/9.png" id="img-9"/>
+            <img className='map-img' src="./img/page1/PLAN-1.jpg" id="img-1"/>
+            <img className='map-img' src="./img/page1/PLAN-2.jpg" id="img-2"/>
+            <img className="map-img aquisition" src="./img/page1/PLAN-3.jpg" id="img-3"/>
+            <img className='map-img' src="./img/page1/PLAN-3-5.jpg" id="img-4"/>
+            <img className='map-img' src="./img/page1/PLAN-4.jpg" id="img-5"/>
+            <img className='map-img' src="./img/page1/PLAN-5.jpg" id="img-6"/>
+            <img className='map-img' src="./img/page1/PLAN-6.jpg" id="img-7"/>
+            <img className='map-img' src="./img/page1/PLAN-7.jpg" id="img-8"/>
+            <img className='map-img' src="./img/page1/PLAN-8.jpg" id="img-9"/>
           </div>
           <div className="map-text-container">
             <div className="map-el" id="el-1"><span className="date">1870</span><br/><span className="map-title">Le <strong>moulin</strong> de la seigneurie d’Antony est situé au bord de la Bièvre. Il est mentionné dès 1248 dans certains écrits seigneuriaux. Avec l’âge industriel, la force hydraulique, devenue insuffisante, est doublée en 1870 par une <strong>machine à vapeur</strong> qui actionne une roue métallique.</span></div>
