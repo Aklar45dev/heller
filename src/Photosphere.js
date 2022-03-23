@@ -1,9 +1,11 @@
 import './App.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Card from './Card'
 import $ from 'jquery'
+import { useHistory } from 'react-router-dom'
+
 
 const Photosphere = props => {
 
@@ -12,7 +14,7 @@ const Photosphere = props => {
     $('#consul').css({display: 'block'})
     $('#logo-container').removeClass("logo-container-center")
     window.addEventListener( 'pointermove', onPointerMove )
-    window.addEventListener("mouseup", showCard)
+    window.addEventListener("mousedown", showCard)
     props.lecteur.play()
     $('body').css({overflow: 'hidden'})
   })
@@ -25,7 +27,7 @@ const Photosphere = props => {
     $('.logo').fadeOut(0).fadeIn(1000)
   },[])
 
-  const audio = ['','',new Audio('https://heller-bucker.s3.eu-west-3.amazonaws.com/Bievres.mp3'),new Audio('https://heller-bucker.s3.eu-west-3.amazonaws.com/Lavoir.mp3') ,'','',new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/etang-du-soleil.mp3")]
+  const audio = ['','',new Audio('https://heller-bucker.s3.eu-west-3.amazonaws.com/Bievres.mp3'),new Audio('https://heller-bucker.s3.eu-west-3.amazonaws.com/Lavoir.mp3') ,'','',new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/soleil.mp3")]
 
   const pointData = [
     {name: "1", x: 0, y: 1, z:-4, src: "./img/page2/curage.png", img: [{original: './img/curage.jpg'}], 
@@ -109,7 +111,7 @@ let cardVisible = false
       raycaster.setFromCamera( pointer, camera )
       const intersects = raycaster.intersectObjects( scene.children )
       if(intersects[0].object.name === "sphere"){
-        $('body').css('cursor', 'default')
+        $('body').css('cursor', 'grab')
         pointName = 'null'
         if(lastHitPoint !== null){
           lastHitPoint.scale.set(1.2,1.2,1.2)
@@ -165,7 +167,7 @@ let cardVisible = false
         if(!cardVisible){
           $(`#${pointName}`).css({display: 'flex'}).fadeOut(0).fadeIn(150)
           if(audio[parseInt(pointName)-1] !== ""){
-            audio[parseInt(pointName)-1].play()
+            //audio[parseInt(pointName)-1].play()
           }
           cardVisible = true
         }
@@ -191,11 +193,24 @@ let cardVisible = false
       audioPlaying = true
     }
   }
+
+
+  const history = useHistory()
+
+  const nextPage = () => {
+    history.push("/podcast");
+  }
+
   
   return (
     <div className="page photosphere">
-      <div className="page-title-font">AU FIL DE L’EAU</div>
-      <div className="page-subtitle-font">étang, mare et rivières</div>
+      <div className="header-page">
+        <div className="text-wrappper">
+          <div className="page-title-font">AU FIL DE L’EAU</div>
+          <div className="page-subtitle-font">étang, mare et rivières</div>
+        </div>
+        <button onClick={() => nextPage()} title="page suivante">→</button>
+      </div>
       {pointData && pointData.map(point => <Card key={point.title} audio={audio} point={point} unhide={unhide} />)}
       <div id="canvas">
         <img className='icon-360' src="./360.png" />

@@ -1,94 +1,59 @@
-body {
-  font-size: 0.925em;
-  padding: 3%;
-  
-  a { 
-    color: #09c; 
-    &:hover,
-    &:focus,
-    &:active {
-       color: #069;
-    }
+$bg-color: rgb(46, 46, 81);
+$link-color: #cafe9b;
+
+.header-page{
+  position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: auto;
+  z-index: 99;
+  align-items: center;
+  .text-wrappper{
+    height: auto;
   }
-}
-
-.visually-hidden {
-    position: absolute !important;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px);
-    padding:0 !important;
-    border:0 !important;
-    height: 1px !important;
-    width: 1px !important;
-    overflow: hidden;
-}
-
-/* Pcast Player */
-.pcast-player {
-  
-  .pcast-player-controls {
-    box-sizing: border-box;
-    background: #000;
-    color: #fff;
-    font-size: 14px;
-    height: 42px;
-    overflow: hidden;
-    padding: 5px;
-  }  
-  
   button {
-    background: #2a2a2a;
-    color: #fff;
-    border: 0;
-    border-radius: 2px;
-    padding: 5px;
-    line-height: 22px;
-    -webkit-appreance: none;
-    min-width: 32px;
-    
-    span {
-      @extend .visually-hidden;
-    }
+    margin-left: 1em;
+    background: transparent;
+    border: none;
+    font-size: 3em;
+    font-weight: 700;
+    color: $link-color;
+    cursor: pointer;
   }
-  
-  progress {
-    height: 13px;
-    width: calc(100% - 281px);
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  }
-
-  progress[value]::-webkit-progress-bar {
-    background-color: #555;
-    border-radius: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-  }
-  
-  progress[value]::-webkit-progress-value  {
-    background: #fff; 
-  }
-  
-  .pcast-time {
-    display: inline-block;
-    font-size: 13px;
-    padding: 0 5px;
-    text-align: center;
-    width: 4em;
-  }
-  
-  .pcast-speed {
-    width: 2.5em;
-  }
-  
-  .pcast-download {
-    font-size: 12px;
-    margin-top: 0.5em;
-    display: inline-block;
-    color: black;
-    &:hover,
-    &:focus {
-      color: #666;
-    }
+  button:hover{
+    opacity: 0.6;
   }
 }
+
+.rhap_container{
+
+  margin-top: 1.5em;
+  border-radius: 1em;
+}
+
+.player-container-card{
+  margin-right: 1em;
+}
+
+.podPlayer{
+  width: 50%;
+}
+
+.pod-btn-container{
+  margin-top: 2.5em;
+  .pod-btn{
+    margin: 0.5em;
+    padding: 1em;
+    border-radius: 30em;
+    border: 0;
+  }
+  .pod-btn:hover{
+    opacity: 0.6;
+    cursor: pointer;
+  }
+  .pod-btn-on{
+    background-color: $link-color;
+  }
+}
+

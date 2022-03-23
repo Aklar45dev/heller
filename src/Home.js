@@ -8,6 +8,7 @@ import $ from "jquery"
 const Home = props => {
 
   $(() => {
+    $('body').css('cursor', 'default')
     $('#logo').addClass("logo-home").fadeOut(0)
     $('#logo-container').addClass("logo-container-center")
     $('body').css({overflow: 'visible'})
@@ -43,6 +44,22 @@ const Home = props => {
     props.didLaunch()
   }
 
+  let audioPlaying = true
+
+  const toggleAudio = () => {
+    if(audioPlaying){
+      props.lecteur.pause()
+      audioPlaying = false
+      $("#button-img").attr("src","./sound-off.png")
+      return
+    }
+    if(!audioPlaying){
+      $("#button-img").attr("src","./sound-on.png")
+      props.lecteur.play()
+      audioPlaying = true
+    }
+  }
+
   return (
     <div className="page">
       <div className="home-vid-container" id="homeVid">
@@ -68,6 +85,9 @@ const Home = props => {
       <div className="lottieBG">
         <Lottie animationData={blob} loop={true}/>
       </div>
+      <button onClick={() => toggleAudio()} className="mute-btn">
+        <img id="button-img" src="./sound-on.png" />
+      </button>
     </div>
   )
 }

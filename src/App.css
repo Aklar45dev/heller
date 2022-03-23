@@ -18,6 +18,8 @@ time, mark, audio, video {
 
 html{
   background-color: rgb(46, 46, 81);
+  overflow-x: hidden !important;
+
 }
 
 ::-webkit-scrollbar {
@@ -158,6 +160,7 @@ html{
   margin-bottom: 2.5em;
   position: absolute;
   display: flex;
+  display: none;
   justify-content: center;
   width: 100%;
   animation: pulse 1s ease-in-out infinite;
@@ -291,19 +294,35 @@ html{
 }
 
 .para-unveil{
-  height: 35em;
+  height: 30em;
 }
 
 .para-unveil img {
   transform: translateX(-50%);
-  width: 800px;
+  width: 700px;
   position: absolute;
   border-radius: 2em;
 }
 
+.para-unveil p {
+  position: absolute;
+  color: #cafe9b;
+  text-shadow: 2px 2px 2px grey;
+  font-size: 2em;
+  font-weight: 700;
+}
+
 .icon-360{
   position: absolute;
-  transform: translate(950%, -75%);
+  transform: translate(950%, -175%) scale(2);
+  width: 5%;
+  pointer-events: none;
+  bottom: 0;
+}
+
+.icon-scroll{
+  position: fixed;
+  transform: translate(950%, -125%) scale(0.7);
   width: 5%;
   opacity: 0.9;
   pointer-events: none;
@@ -327,6 +346,17 @@ html{
   justify-content: center;
 }
 
+.inter-vid-container{
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color:rgba(0, 0, 0, 1);
+  justify-content: center;
+}
+
 #mainVid {
   top: 0;
   width: auto;
@@ -343,10 +373,11 @@ html{
   font-size: 1.5em;
   padding: 0.4em;
   border-radius: 0.5em;
-  font-weight: 500;
+  font-weight: 700;
   background: transparent;
   border-color: rgb(112, 255, 213);
   cursor: pointer;
+  border-style: solid;
 }
 
 .skip:hover{
@@ -406,7 +437,7 @@ html{
 }
 
 .image-gallery{
-  width: 160%;
+  width: 120%;
   transform: translateX(-20%);
   overflow: hidden;
   max-height: 100%;
@@ -416,7 +447,7 @@ html{
 
 .card-content {
   margin: 3em;
-  margin-left: 0;
+  margin-left: 1em;
   margin-top: 0;
   margin-bottom: 5em;
   max-width: 50%;
@@ -474,8 +505,10 @@ html{
   width: 100%;
   height: auto;
   display: grid;
-  z-index: 20;
-  background-color:rgba(0, 0, 0, 0)
+  z-index: 0;
+  margin-top: 10em;
+  background-color:rgba(0, 0, 0, 0);
+  pointer-events: none;
 }
 
 .element{
@@ -511,10 +544,10 @@ html{
 }
 
 .videoPlayerInterview{
-  width: 100%;
   position: absolute;
+  height: 100%;
   top: 0;
-  z-index: -1;
+  z-index: -10;
 }
 
 .video-container{
@@ -529,13 +562,14 @@ html{
   align-items: center;    
   justify-content: center;
   flex-direction: column;
+  padding-top: 10em;
 }
 
 .pod-container .pod-img{
-  width: 60%;
+  width: 50%;
   height: auto;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 25%;
+  margin-right: 25%;
   box-shadow: 5px 5px 20px #00000070;
   border-radius: 1em;
 }
@@ -675,13 +709,6 @@ footer p {
   text-shadow: 3px 3px 3px black;
 }
 
-.map-text-container{
-  display: flex;
-  align-items: center;
-  flex-direction:column;
-  min-width: 25%;
-  align-content: center;
-}
 
 .date{
   font-family: 'Montserrat', sans-serif;
@@ -698,35 +725,32 @@ footer p {
 
 .map-el{
   position: absolute;
-  width: 50%;
-  height: 50%;
+  width: 100%;
   top: 0;
   opacity: 0;
-  transform: translateY(38rem) translateX(3rem);
 }
 
 .map-container{
   display: flex;
-  margin-left: 0%;
-  flex-direction: column;
-  margin-right: 0%;
+  flex-direction: row;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.map-text-container{
+  width: 35%;
+  min-width: 350px;
+  position: relative;
+  margin-right: 15%;
 }
 
 .map-img-container{
   width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.map-img-container img{
-  position: absolute; 
-  width: 800px;
 }
 
 .map-img{
   position: absolute;
-  width: 40%;
+  width: 50%;
 }
 
 .aquisition{
@@ -747,6 +771,7 @@ footer p {
   margin: 20%;
   margin-top: 0;
   margin-bottom: 0;
+  pointer-events: none;
 }
 
 .mute-btn{
@@ -805,7 +830,7 @@ footer p {
   bottom: 0;
   width: 10%;
   margin: 45%;
-  margin-bottom: 5%;
+  margin-bottom: 4%;
   font-size: 2em;
   background-color:rgba(0, 0, 0,0);
   border: 0;

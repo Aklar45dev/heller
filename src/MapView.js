@@ -3,17 +3,33 @@ import { useEffect } from 'react'
 import ScrollMagic from 'scrollmagic'
 import { ScrollMagicPluginIndicator} from "scrollmagic-plugins"
 import $ from 'jquery'
+import { useHistory } from 'react-router-dom'
+import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom'
+
 
 const MapView = () => {
 
+  $(() => {
+    
+    
+  })
+
+    
   useEffect(() => {
+
+    const myTimeout = setTimeout(myGreeting, 3000);
+
+    function myGreeting() {
+      $(window).scrollTop(10)
+      clearTimeout(myTimeout);
+    }
+
     //ScrollMagicPluginIndicator(ScrollMagic)
     const controller = new ScrollMagic.Controller()
-
     //scene1
     const Scene1 = new ScrollMagic.Scene({
       triggerElement: '#project01',
-      duration: '100%',
+      duration: '50%',
       reverse: true,
       triggerHook: 0.5,
     })
@@ -21,8 +37,8 @@ const MapView = () => {
     .addTo(controller)
 
     Scene1.on("progress",  event => {
-      $('#el-1').css({opacity: event.progress*2}) 
-      $('#img-1').css({opacity: event.progress*2}) 
+      $('#el-1').css({opacity: 1}) 
+      $('#img-1').css({opacity: 1})
     })
 
     //scene2
@@ -162,15 +178,29 @@ const MapView = () => {
   },[])
 
   const scrollTop = () => {
-    $(window).scrollTop(0);
+    $(window).scrollTop(0)
   }
+
+  const history = useHistory()
+
+  const nextPage = () => {
+    history.push("/photosphere")
+    $("#MapView").css({display: 'none'})
+  }
+
+
   
   return (
-    <div className="page">
+    <div className="page" id="scroller">
+      <div className="header-page">
+        <div className="text-wrappper">
+          <div className="page-title-font">AUX ORIGINES DU PARC</div>
+          <div className="page-subtitle-font">de 1860 à nos jours</div>
+        </div>
+        <button onClick={() => nextPage()} title="page suivante">→</button>
+      </div>
       <div className="down-arrow">↓</div>
       <div className="container">
-        <div className="page-title-font">AUX ORIGINES DU PARC</div>
-        <div className="page-subtitle-font">de 1860 à nos jours</div>
         <div className="map-container">
           <div className="map-img-container">
             <img className='map-img' src="./img/page1/PLAN-1.jpg" id="img-1"/>
@@ -196,7 +226,6 @@ const MapView = () => {
           </div>
         </div>
         </div>
-      <div className="project" />
         <div id="project01" className="project"/>
         <div id="project02" className="project"/>
         <div id="project03" className="project"/>

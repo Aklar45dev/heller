@@ -1,6 +1,7 @@
 import './App.css'
 import { useEffect } from 'react'
 import $ from 'jquery'
+import { useHistory } from 'react-router-dom'
 
 const Parallax = props => {
 
@@ -44,13 +45,24 @@ const Parallax = props => {
     postionY = (event.pageY/window.innerHeight)-0.5
     postionX = (event.pageX/window.innerWidth)-0.5
   }
+
+  const history = useHistory()
+
+  const nextPage = () => {
+    history.push("/next");
+  }
   
   return (
     <div className="page">
       <div className="gradient"><img src="./gradient.png" /></div>
       <div className="gradient2"><img src="./gradient.png" /></div>
-      <div className="page-title-font">L’ÉMERGENCE D’UN GRAND PROJET</div>
-      <div className="page-subtitle-font">réaménagement du parc heller</div>
+      <div className="header-page">
+        <div className="text-wrappper">
+          <div className="page-title-font">L’ÉMERGENCE D’UN GRAND PROJET</div>
+          <div className="page-subtitle-font">réaménagement du parc heller</div>
+        </div>
+        <button onClick={() => nextPage()} title="page suivante">→</button>
+      </div>
       <div className='para-container'>
         <img id='para-1' className="para-pic" src="./img/page5/1.png"/>
         <img id='para-2' className="para-pic" src="./img/page5/2.png"/>

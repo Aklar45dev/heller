@@ -16,6 +16,7 @@
     "react-audio-element": "^1.0.5",
     "react-dom": "^16.8.6",
     "react-gsap": "^1.2.0",
+    "react-h5-audio-player": "^3.8.3",
     "react-image-gallery": "^1.2.7",
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.0",
