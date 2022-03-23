@@ -17,7 +17,7 @@ const Card = props => {
     <div id={props.point.name} className="card-container">
         <button className="close-btn" onClick={() => hideCard()}>X</button>
         <div className="card">
-          <ImageGallery items={props.point.img} showBullets={false} showFullscreenButton={false} showNav={true} showPlayButton={false} slideDuration={250} slideInterval={5000}/>
+          <ImageGallery items={props.point.img} showBullets={true} showFullscreenButton={false} showNav={true} showPlayButton={false} slideDuration={250} slideInterval={5000}/>
           <div className="card-content">
             <h2>{props.point.title}</h2>
             <p className="card-text">{props.point.text}</p>

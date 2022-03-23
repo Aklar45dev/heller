@@ -25,7 +25,7 @@ const Photosphere = props => {
     $('.logo').fadeOut(0).fadeIn(1000)
   },[])
 
-  const audio = ['','','','','','',new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/etang-du-soleil.mp3")]
+  const audio = ['','',new Audio('https://heller-bucker.s3.eu-west-3.amazonaws.com/Bievres.mp3'),new Audio('https://heller-bucker.s3.eu-west-3.amazonaws.com/Lavoir.mp3') ,'','',new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/etang-du-soleil.mp3")]
 
   const pointData = [
     {name: "1", x: 0, y: 1, z:-4, src: "./img/page2/curage.png", img: [{original: './img/curage.jpg'}], 
@@ -59,7 +59,7 @@ const Photosphere = props => {
     s'installent à leur tour. Cette concentration d'activités entraîne rapidement une pollution des eaux de 
     la rivière. Tandis que les particuliers y vident détritus et excréments, les artisans y déversent produits 
     toxiques, déchets, eaux savonneuses et restes d'animaux.`},
-    {name: "6", x: 3, y: -0.5, z: -3, src: "./img/page2/pêcheurs.png", img: [{original: './img/peche-01.jpg'},{original: './img/peche-02.jpg'},{original: './img/peche-03.jpg'}], title: `LA PÊCHE`, text: `Les amateurs de pêche étaient nombreux à se retrouver sur les rives de la Bièvre pour récupérer 
+    {name: "6", x: 3, y: -0.5, z: -3, src: "./img/page2/pêcheurs.png", img: [{original: './img/peche-01.jpg'},{original: './img/peche-02.jpg'},{original: './img/peche-03.jpg'},{original: './img/peche-04.jpg'}], title: `LA PÊCHE`, text: `Les amateurs de pêche étaient nombreux à se retrouver sur les rives de la Bièvre pour récupérer 
     dans leurs filets des gardons, écrevisses, goujons et brochets.`},
     {name: "7", x: -0.7, y: -0.1, z: 3, src: "./img/page2/étang-du-soleil.png", img: [{original: './img/etang-1.jpg'},{original: './img/etang-2.jpg'},{original: './img/etang-3.jpg'},{original: './img/etang-4.jpg'},{original: './img/etang-5.jpg'},{original: './img/etang-6.jpg'},{original: './img/etang-7.jpg'},{original: './img/etang-9.jpg'}], title: `L'ÉTANG DU SOLEIL`, text: `L'étang est en partie alimenté par une dérivation du ru des Godets. Il fut creusé à la pelle dans les années 1940 par un Antonien, Jean Proksa, qui agrandit avec son fils ce qui n’était à l’origine qu’une modeste mare. Le propriétaire attira ensuite les amateurs de canotage en proposant des barques à louer et ouvrit une guinguette : « Le Soleil d’Antony ». Elle ferma ses portes en 1975, année du décès de M. Proksa. Aujourd’hui, l’étang est en fin de vie. Des aérateurs ont été installés en  2017 pour offrir une oxygénation suffisante à la faune aquatique qui le peuple, mais ce n’est pas suffisant. Des analyses réalisées la même année ont révélé la présence d’hydrocarbure dans le sol et la vase présente dans l’eau représente à ce jour plus de la moitié du bassin.`}
   ]

@@ -16,6 +16,7 @@ const App = () => {
 
   const sphereAudio = new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/fond-sonore.mp3")
   sphereAudio.loop = true
+  //sphereAudio.muted = true
   sphereAudio.volume = 0.6
   let hasLaunched = false
   let timerRun = false
