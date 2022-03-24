@@ -764,6 +764,7 @@ footer p {
 .para-container{
   height: 55rem;
   display: flex;
+  overflow-y: hidden;
 }
 
 .para-pic{
@@ -775,6 +776,7 @@ footer p {
   margin-top: 0;
   margin-bottom: 0;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .mute-btn{

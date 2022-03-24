@@ -12,7 +12,7 @@ const MapView = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({
 
     display() {
-      $(window).delay(500).scrollTop(100)
+      $(window).scrollTop(500).delay(1000).scrollTop(1000).delay(1000).scrollTop(500)
     }
     
   }))
