@@ -370,7 +370,7 @@ html{
   margin: 2em;
   font-family: 'Montserrat', sans-serif;
   color:rgb(112, 255, 213); 
-  font-size: 1.5em;
+  font-size: 1.0em;
   padding: 0.4em;
   border-radius: 0.5em;
   font-weight: 700;
@@ -548,6 +548,9 @@ html{
   height: 100%;
   top: 0;
   z-index: -10;
+  background-color: black;
+  padding-left: 100em;
+  padding-right: 100em;
 }
 
 .video-container{

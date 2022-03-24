@@ -38,6 +38,7 @@ $link-color: #cafe9b;
 
 .podPlayer{
   width: 50%;
+  margin-bottom: 5em;
 }
 
 .pod-btn-container{
@@ -53,7 +54,7 @@ $link-color: #cafe9b;
     cursor: pointer;
   }
   .pod-btn-on{
-    background-color: $link-color;
+    background-color: rgb(24, 255, 186);
   }
 }
 

@@ -10,7 +10,7 @@ import Parallax from './Parallax'
 import Footer from './Footer'
 import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom'
 import $ from "jquery"
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 const App = () => {
 
@@ -49,6 +49,13 @@ const App = () => {
       })
     }
 
+  const showMap = () => {
+    MapRef.current.display()
+  }
+  
+  const MapRef = useRef()
+
+
   return (
     <Router>
       <div id="logo-container">
@@ -58,12 +65,12 @@ const App = () => {
         <Link className="consul" id="consul" onClick={() => pauseAudio()} to="/"><img src="./cosultation.png"/></Link>
       </div>
       <div id="MapView">
-        <MapView />
+        <MapView ref={el => MapRef.current = el} />
       </div>
       <Switch>
         <Route path='/parallax' component={() => <Parallax lecteur={sphereAudio} timerRun={timerRun} timerRuns={timerRuns}/>} />
         <Route path='/photosphere' component={() => <Photosphere lecteur={sphereAudio} />} />
-        <Route path='/map' component={() => <Map lecteur={sphereAudio} />}/>
+        <Route path='/map' component={() => <Map lecteur={sphereAudio} showMap={showMap} />}/>
         <Route path='/podcast' component={() => <Podcast lecteur={sphereAudio}/>} />
         <Route path='/interview'  component={() => <Interview  lecteur={sphereAudio}/>} />
         <Route path='/next'  component={() => <Suivre  lecteur={sphereAudio}/>} />

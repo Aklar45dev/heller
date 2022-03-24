@@ -19,6 +19,7 @@ const Podcast = props => {
     $('#after2').fadeOut(0)
     $('#before3').fadeOut(0)
     $('#after3').fadeOut(0)
+    $('body').css('cursor', 'default')
   })
 
   useEffect(() => {

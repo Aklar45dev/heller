@@ -1,18 +1,24 @@
 import './App.css'
 import $ from 'jquery'
-import React,{ useEffect, useState, useRef } from 'react';
+import React,{ useEffect, useState, useRef, forwardRef, useImperativeHandle  } from 'react';
 import ImageGallery from 'react-image-gallery'
 import "react-image-gallery/styles/css/image-gallery.css"
 import ReactAudioPlayer  from 'react-h5-audio-player'
 import 'react-h5-audio-player/lib/styles.css'
 
-const Card = props => {
+const Card = forwardRef((props, ref) => {
   
   const player = useRef()
 
-  const openCard = () => {
-    player.current.audio.current.play()
-  }
+  useImperativeHandle(ref, () => ({
+
+    playAudio() {
+      if(props.audio[parseInt(props.point.name)-1].src !== undefined){
+        player.current.audio.current.play()
+      }
+    }
+    
+  }))
 
   const hideCard = () => {
     if(props.audio[parseInt(props.point.name)-1].src !== undefined){
@@ -44,6 +50,6 @@ const Card = props => {
         </div>
       </div>
   )
-}
+})
 
 export default Card

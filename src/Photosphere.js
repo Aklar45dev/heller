@@ -1,7 +1,7 @@
 import './App.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Card from './Card'
 import $ from 'jquery'
 import { useHistory } from 'react-router-dom'
@@ -165,10 +165,8 @@ let cardVisible = false
   const showCard = () => {
       if (pointName !== "null") {
         if(!cardVisible){
+          childRef.current[pointName-1].playAudio()
           $(`#${pointName}`).css({display: 'flex'}).fadeOut(0).fadeIn(150)
-          if(audio[parseInt(pointName)-1] !== ""){
-            //audio[parseInt(pointName)-1].play()
-          }
           cardVisible = true
         }
       }
@@ -198,9 +196,10 @@ let cardVisible = false
   const history = useHistory()
 
   const nextPage = () => {
-    history.push("/podcast");
+    history.push("/podcast")
   }
 
+  const childRef = useRef([])
   
   return (
     <div className="page photosphere">
@@ -211,7 +210,7 @@ let cardVisible = false
         </div>
         <button onClick={() => nextPage()} title="page suivante">→</button>
       </div>
-      {pointData && pointData.map(point => <Card key={point.title} audio={audio} point={point} unhide={unhide} />)}
+      {pointData.map((point, i) => <Card key={point.title} ref={el => childRef.current.push(el)} audio={audio} point={point} unhide={unhide} />)}
       <div id="canvas">
         <img className='icon-360' src="./360.png" />
       </div>

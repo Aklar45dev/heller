@@ -1,5 +1,5 @@
 import './App.css'
-import { useEffect } from 'react'
+import React,{ useEffect, useState, useRef, forwardRef, useImperativeHandle  } from 'react';
 import ScrollMagic from 'scrollmagic'
 import { ScrollMagicPluginIndicator} from "scrollmagic-plugins"
 import $ from 'jquery'
@@ -7,22 +7,16 @@ import { useHistory } from 'react-router-dom'
 import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom'
 
 
-const MapView = () => {
+const MapView = forwardRef((props, ref) => {
+  
+  useImperativeHandle(ref, () => ({
 
-  $(() => {
-    
-    
-  })
-
-    
-  useEffect(() => {
-
-    const myTimeout = setTimeout(myGreeting, 3000);
-
-    function myGreeting() {
-      $(window).scrollTop(10)
-      clearTimeout(myTimeout);
+    display() {
+      $(window).delay(500).scrollTop(100)
     }
+    
+  }))
+  useEffect(() => {
 
     //ScrollMagicPluginIndicator(ScrollMagic)
     const controller = new ScrollMagic.Controller()
@@ -177,7 +171,7 @@ const MapView = () => {
 
   },[])
 
-  const scrollTop = () => {
+  const scrollTo = () => {
     $(window).scrollTop(0)
   }
 
@@ -235,9 +229,9 @@ const MapView = () => {
         <div id="project07" className="project"/>
         <div id="project08" className="project"/>
         <div id="project09" className="project"/>
-        <button className='topBtn' onClick={() => scrollTop()}>haut</button>
+        <button className='topBtn' onClick={() => scrollTo()}>haut</button>
     </div>
   )
-}
+})
 
 export default MapView

@@ -15,6 +15,7 @@ const Map = props => {
     $('.page').fadeOut(0).fadeIn(1000)
     $('.logo').fadeOut(0).fadeIn(1000)
     $('#MapView').css({display: 'block'})
+    props.showMap()
   },[])
   
   let audioPlaying = true
