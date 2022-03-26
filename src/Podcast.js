@@ -36,7 +36,7 @@ const Podcast = props => {
     let postionX = (((event.pageX/window.innerWidth)-0.5))*3-50
     let BGpostionY = ((event.pageY/window.innerHeight)-0.5)*1.5
     let BGpostionX = (((event.pageX/window.innerWidth)-0.5)*1.5)-50
-    let LpostionY = ((event.pageY/window.innerHeight)-0.5)*10
+    let LpostionY = ((event.pageY/window.innerHeight)-0.5)*5
     let LpostionX = (((event.pageX/window.innerWidth)-0.5)*10)-50
     $('#para-pod-1').css('transform', `translate(${postionX}%,${postionY}%)`)
     $('#para-leg-1').css('transform', `translate(${LpostionX}%,${LpostionY}%)`)

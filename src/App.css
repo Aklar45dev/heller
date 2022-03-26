@@ -167,6 +167,39 @@ html{
   margin-bottom: 3em;
 }
 
+.page-para-bold {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.08em;
+  color:#cafe9b;  
+  font-weight: 700;
+  font-size: 1.0em;
+  margin: 0em;
+  text-align: center;
+  margin-top: 0em;
+  margin-bottom: 3em;
+}
+
+.page-subtitle-font-left {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.08em;
+  color:#cafe9b; 
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-top: 3em;
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+.page-para-left {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.08em;
+  color:white; 
+  font-weight: 400;
+  margin-bottom: 1em;
+  font-size: 1.0em;
+  text-align: left;
+}
+
 .down-arrow{
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.12em;
@@ -182,6 +215,15 @@ html{
   justify-content: center;
   width: 100%;
   animation: pulse 1s ease-in-out infinite;
+}
+
+.acteurs{
+  margin-top: 2em;
+  margin-bottom: 12em;
+}
+
+.acteurs1{
+  margin-top: 2em;
 }
 
 .card-container {
@@ -721,7 +763,7 @@ footer{
   justify-content: center;
   bottom: 0;
   position: fixed;
-  z-index: 1000;
+  z-index: -1000;
   width: 100%;
 }
 
