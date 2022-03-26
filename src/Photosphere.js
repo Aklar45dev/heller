@@ -17,6 +17,9 @@ const Photosphere = props => {
     window.addEventListener("mousedown", showCard)
     props.lecteur.play()
     $('body').css({overflow: 'hidden'})
+    $('#footer-text').css({display: 'block'})
+    $('#home-link').css({display: 'block'})
+    $('#footer-mention').css({display: 'none'})
   })
   
   useEffect(() => {
@@ -27,7 +30,7 @@ const Photosphere = props => {
     $('.logo').fadeOut(0).fadeIn(1000)
   },[])
 
-  const audio = ['','',new Audio('https://heller-bucker.s3.eu-west-3.amazonaws.com/Bievres.mp3'),new Audio('https://heller-bucker.s3.eu-west-3.amazonaws.com/Lavoir.mp3') ,'','',new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/soleil.mp3")]
+  const audio = ['','',new Audio('https://heller-bucker.s3.eu-west-3.amazonaws.com/Bievres.mp3'),new Audio('https://heller-bucker.s3.eu-west-3.amazonaws.com/Lavoir.mp3') ,'',new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/p%C3%AAche.mp3"),new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/soleil.mp3")]
 
   const pointData = [
     {name: "1", x: 0, y: 1, z:-4, src: "./img/page2/curage.png", img: [{original: './img/curage.jpg'}], 
@@ -68,13 +71,15 @@ const Photosphere = props => {
 
 let pointName = "null"
 let cardVisible = false
+let canClick = true
 
   const scene = new THREE.Scene()
   const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
+  const clock = new THREE.Clock()
   camera.position.z = 0.01
+
   const renderer = new THREE.WebGLRenderer()
   let sprites = []
-  let spriteRotation = 0
 
   renderer.setSize( window.innerWidth, window.innerHeight )
   const controls = new OrbitControls( camera, renderer.domElement )
@@ -114,7 +119,7 @@ let cardVisible = false
         $('body').css('cursor', 'grab')
         pointName = 'null'
         if(lastHitPoint !== null){
-          lastHitPoint.scale.set(1.2,1.2,1.2)
+          lastHitPoint.scale.set(1.2,0.75,1.2)
         }
         return
       }
@@ -122,20 +127,11 @@ let cardVisible = false
         $('body').css('cursor', 'pointer')
         pointName = intersects[0].object.name
         lastHitPoint = intersects[0].object
-        intersects[0].object.scale.set(1.35,1.35,1.35)
+        intersects[0].object.scale.set(1.35,0.80,1.35)
         return
         }
       }
   }
-
-  const animate = () => {
-    requestAnimationFrame( animate )
-    renderer.render( scene, camera )
-    controls.update()
-    controls.rotateSpeed = -0.25
-  }
-  
-  animate()
 
   const createPoint = (props) => {
     const geometry = new THREE.PlaneGeometry( 1, 1 )
@@ -157,22 +153,27 @@ let cardVisible = false
     planeIcon.position.y = props.y
     planeIcon.position.z = props.z
     planeIcon.scale.x = 1.2
-    planeIcon.scale.y = 1.2
+    planeIcon.scale.y = 0.75
     planeIcon.scale.z = 1.2
     scene.add( planeIcon )
   }
 
   const showCard = () => {
+    if(canClick){
       if (pointName !== "null") {
         if(!cardVisible){
+          $('#arrows-for-boomers').fadeOut(500)
           childRef.current[pointName-1].playAudio()
           $(`#${pointName}`).css({display: 'flex'}).fadeOut(0).fadeIn(150)
           cardVisible = true
         }
       }
+    }
   }
 
-  const unhide = () => {
+  const hideCard = () => {
+    $('#arrows-for-boomers').fadeIn(250)
+
     cardVisible = false
   }
 
@@ -192,7 +193,6 @@ let cardVisible = false
     }
   }
 
-
   const history = useHistory()
 
   const nextPage = () => {
@@ -200,6 +200,32 @@ let cardVisible = false
   }
 
   const childRef = useRef([])
+
+  const right = '>'
+  const left = '<'
+  let rotationCam = -1.57
+
+  const rotate = (direction) => {
+    rotationCam = rotationCam + 0.5*direction
+    controls.target.set(Math.cos(rotationCam)*0.2, 0, Math.sin(rotationCam)*0.2)
+    camera.position.x = 0
+    camera.position.y = 0
+    camera.position.z = 0.01
+  }
+
+  const animate = () => {
+    const delta = clock.getDelta()
+    requestAnimationFrame( animate )
+    renderer.render( scene, camera )
+    controls.update(delta)
+    controls.rotateSpeed = -0.25
+  }
+  
+  animate()
+
+  const hoverTag = (state) => {
+    canClick = !state
+  }
   
   return (
     <div className="page photosphere">
@@ -208,11 +234,14 @@ let cardVisible = false
           <div className="page-title-font">AU FIL DE L’EAU</div>
           <div className="page-subtitle-font">étang, mare et rivières</div>
         </div>
-        <button onClick={() => nextPage()} title="page suivante">→</button>
       </div>
-      {pointData.map((point, i) => <Card key={point.title} ref={el => childRef.current.push(el)} audio={audio} point={point} unhide={unhide} />)}
+      {pointData.map((point, i) => <Card key={point.title} ref={el => childRef.current.push(el)} audio={audio} point={point} hideCard={hideCard} />)}
       <div id="canvas">
         <img className='icon-360' src="./360.png" />
+        <div className='sphere-arrow-container' id='arrows-for-boomers'>
+          <button onClick={() => rotate(-1)} onMouseOver={() => hoverTag(true)} onMouseLeave={() => hoverTag(false)}>{left}</button>
+          <button onClick={() => rotate(1)} onMouseOver={() => hoverTag(true)} onMouseLeave={() => hoverTag(false)}>{right}</button>
+        </div>
       </div>
       <button onClick={() => toggleAudio()} className="mute-btn">
         <img id="button-img" src="./sound-on.png" />

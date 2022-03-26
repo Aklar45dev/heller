@@ -1,5 +1,6 @@
 $bg-color: rgb(46, 46, 81);
 $link-color: #cafe9b;
+$link-home: #00ff95;
 
 .header-page{
   position: fixed;
@@ -9,6 +10,35 @@ $link-color: #cafe9b;
   height: auto;
   z-index: 99;
   align-items: center;
+  pointer-events: none;
+  top: 0;
+  .text-wrappper{
+    height: auto;
+  }
+  button {
+    margin-left: 1em;
+    background: transparent;
+    border: none;
+    font-size: 3em;
+    font-weight: 700;
+    color: $link-color;
+    cursor: pointer;
+  }
+  button:hover{
+    opacity: 0.6;
+  }
+}
+
+.header-page-scroll{
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: auto;
+  z-index: 99;
+  align-items: center;
+  pointer-events: none;
+  top: 0;
   .text-wrappper{
     height: auto;
   }
@@ -27,9 +57,13 @@ $link-color: #cafe9b;
 }
 
 .rhap_container{
-
   margin-top: 1.5em;
   border-radius: 1em;
+  background-color: rgb(71, 71, 124);
+}
+
+.rhap_time{
+  color: white;
 }
 
 .player-container-card{
@@ -37,15 +71,17 @@ $link-color: #cafe9b;
 }
 
 .podPlayer{
-  width: 50%;
+  width: 375px;
   margin-bottom: 5em;
+  z-index: 100;
 }
 
 .pod-btn-container{
-  margin-top: 2.5em;
+  margin-bottom: 1.5em;
+  z-index: 2;
   .pod-btn{
-    margin: 0.5em;
-    padding: 1em;
+    margin: 0.25em;
+    padding: 0.5em;
     border-radius: 30em;
     border: 0;
   }
@@ -58,3 +94,110 @@ $link-color: #cafe9b;
   }
 }
 
+.pod-arrow-container{
+  position: absolute;
+  z-index: 1000;
+  transform: translateY(250px) translateX(-50%);
+}
+
+.pod-arrow-container button{
+  background: transparent;
+  color: rgb(24, 255, 186);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 6em;
+  font-weight: 400;
+  border: 0;
+}
+
+.pod-arrow-container button:hover{
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.pod-arrow-container button:active{
+  opacity: 1;
+}
+
+.pod-arrow-container .right{
+  transform: translateX(325px) scaleY(2);
+}
+
+.pod-arrow-container .left{
+  transform: translateX(-325px) scaleY(2);
+}
+
+.sphere-arrow-container{
+  position: absolute;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.sphere-arrow-container button{
+  background: transparent;
+  color: $link-color;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4em;
+  font-weight: 400;
+  border: 0;
+  pointer-events: visible;
+  transform: scaleY(3) scaleX(1.5);
+  margin: 0.5em;
+}
+
+.sphere-arrow-container button:hover{
+  opacity: 0.6;
+  pointer-events: visible;
+  cursor: pointer;
+}
+
+.sphere-arrow-container button:active{
+  opacity: 1;
+}
+
+#footer-mention{
+  color: $link-color;
+  text-decoration: underline;
+}
+
+#home-link {
+  top: 0;
+  margin: 3em;
+  margin-top: 6em;
+  color: rgb(24, 255, 186);
+  text-decoration: underline;
+  position: fixed;
+}
+
+.patenaire-container{
+  margin-top: 5em;
+  margin-bottom: 10em;
+  display: grid;
+  grid-template: auto / 33% 33% 33%;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.patenaire{
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+  img{
+    width: auto;
+    max-height: 70px;
+    margin-bottom: 0;
+    display: flow-root;
+  }
+  p{
+    font-size: 0.5em;
+    text-align: initial;
+    padding: 1.5em;
+    padding-right: 5em;
+    padding-left: 0;
+    color: white;
+  }
+}

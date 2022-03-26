@@ -7,8 +7,11 @@ const Map = props => {
   $(() => {
     $('#logo').removeClass("logo-home")
     $('#consul').css({display: 'block'})
+    $('#home-link').css({display: 'block'})
     $('#logo-container').removeClass("logo-container-center")
     props.lecteur.play()
+    $('#footer-text').css({display: 'block'})
+    $('#footer-mention').css({display: 'none'})
   })
 
   useEffect(() => {

@@ -23,6 +23,7 @@ const App = () => {
 
   $(() => {
     $('#MapView').css({display: 'none'})
+    $('#consultation-container').fadeOut(0).delay(1000).fadeIn(10)
   })
 
   useEffect(() => {
@@ -54,12 +55,15 @@ const App = () => {
   }
   
   const MapRef = useRef()
-
+  const accueil = "< Retour à l'accueil"
 
   return (
     <Router>
       <div id="logo-container">
-        <Link className="logo" id="logo" onClick={() => pauseAudio()} to="/"><img src="./LOGO.png"/></Link>
+        <Link className="logo" id="logo" onClick={() => pauseAudio()} to="/">
+          <img src="./LOGO.png"/>
+        </Link>
+        <Link id="home-link" onClick={() => pauseAudio()} to="/">{accueil}</Link>
       </div>
       <div id="consultation-container">
         <Link className="consul" id="consul" onClick={() => pauseAudio()} to="/"><img src="./cosultation.png"/></Link>
@@ -74,7 +78,7 @@ const App = () => {
         <Route path='/podcast' component={() => <Podcast lecteur={sphereAudio}/>} />
         <Route path='/interview'  component={() => <Interview  lecteur={sphereAudio}/>} />
         <Route path='/next'  component={() => <Suivre  lecteur={sphereAudio}/>} />
-        <Route path='/' component={() => <Home  lecteur={sphereAudio} hasLaunched={hasLaunched} didLaunch={didLaunch} />} />
+        <Route path='/' component={() => <Home  lecteur={sphereAudio} hasLaunched={hasLaunched} didLaunch={didLaunch}  timerRun={timerRun} timerRuns={timerRuns}/>} />
       </Switch>
       <Footer id="footer"/>
     </Router>

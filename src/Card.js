@@ -25,7 +25,7 @@ const Card = forwardRef((props, ref) => {
       player.current.audio.current.pause()
     }
     $(`#${props.point.name}`).css({display: 'none'})
-    props.unhide()
+    props.hideCard()
     if(props.audio[parseInt(props.point.name)-1] !== ""){
       props.audio[parseInt(props.point.name)-1].pause()
     }
@@ -36,7 +36,7 @@ const Card = forwardRef((props, ref) => {
         <button className="close-btn" onClick={() => hideCard()}>X</button>
         <div className="card">
           <div className="">
-            <ImageGallery items={props.point.img} showBullets={true} showFullscreenButton={false} showNav={true} showPlayButton={false} slideDuration={250} slideInterval={5000}/>
+            <ImageGallery items={props.point.img} showBullets={true} showFullscreenButton={true} showNav={true} showPlayButton={false} slideDuration={250} slideInterval={5000}/>
           {props.audio[parseInt(props.point.name)-1].src !== undefined ?
             <div className="player-container-card">
               <ReactAudioPlayer ref={player} src={props.audio[parseInt(props.point.name)-1].src}/>

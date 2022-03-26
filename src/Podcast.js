@@ -20,6 +20,9 @@ const Podcast = props => {
     $('#before3').fadeOut(0)
     $('#after3').fadeOut(0)
     $('body').css('cursor', 'default')
+    $('#footer-text').css({display: 'block'})
+    $('#home-link').css({display: 'block'})
+    $('#footer-mention').css({display: 'none'})
   })
 
   useEffect(() => {
@@ -63,7 +66,29 @@ const Podcast = props => {
     history.push("/interview");
   }
 
+  let slideId = 1;
+
+  const processId = (increment) => {
+    let id = 1
+    if(slideId == 6 && increment === 1){
+      id = 1
+      switchSlide(id)
+      return
+    }
+    if(slideId == 1 && increment === -1){
+      id = 6
+      switchSlide(id)
+      return
+    }
+    else{
+      id = slideId+increment
+      switchSlide(id)
+    }
+    
+  }
+
   const switchSlide = id => {
+    slideId = id
     $('#before').fadeOut(0)
     $('#after').fadeOut(0)
     $('#before2').fadeOut(0)
@@ -104,19 +129,30 @@ const Podcast = props => {
     }
   }
 
+  const right = '>'
+  const left = '<'
+
   return (
     <div className="page">
       <div className="gradient"><img src="./gradient.png" /></div>
       <div className="gradient2"><img src="./gradient.png" /></div>
-      <div className="header-page">
+      <div className="header-page-scroll">
         <div className="text-wrappper">
           <div className="page-title-font">TERRE DE SPORT</div>
           <div className="page-subtitle-font">le rugby au coeur du parc</div>
+          <div className="page-para">
+          Entre 1940 et 1970, la Ville implante au parc Heller des espaces pour les sportifs,<br/>
+          notamment de grands terrains de rugby. Jusqu’à leur déménagement, les matchs<br/>
+          attireront un public toujours de plus en plus nombreux.
+          </div>
         </div>
-        <button onClick={() => nextPage()} title="page suivante">→</button>
       </div>
       <div className="pod-container">
           <div className='para-unveil'>
+            <div className='pod-arrow-container'>
+              <button onClick={() => processId(-1)} className="left">{left}</button>
+              <button onClick={() => processId(1)} className="right">{right}</button>
+            </div>
             <div id="after">
               <img id='bg-1' src="./img/page3/après-plan-2.png" />
               <img id='para-pod-1' src="./img/page3/après-plan-1.png" />

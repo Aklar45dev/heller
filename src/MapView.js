@@ -12,7 +12,11 @@ const MapView = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({
 
     display() {
-      $(window).scrollTop(500).delay(1000).scrollTop(1000).delay(1000).scrollTop(500)
+      const myTimeout = setTimeout(myGreeting, 1000);
+      function myGreeting() {
+        clearTimeout(myTimeout);
+        $(window).scrollTop(10)
+      }
     }
     
   }))
@@ -186,12 +190,18 @@ const MapView = forwardRef((props, ref) => {
   
   return (
     <div className="page" id="scroller">
+      <div className="gradient"><img src="./gradient.png" /></div>
+      <div className="gradient2"><img src="./gradient.png" /></div>
       <div className="header-page">
         <div className="text-wrappper">
           <div className="page-title-font">AUX ORIGINES DU PARC</div>
-          <div className="page-subtitle-font">de 1860 à nos jours</div>
+          <div className="page-subtitle-font">de 1870 à nos jours</div>
+          <div className="page-para">
+            Le parc Heller est un témoin de l'histoire d'Antony.<br/>
+            À travers les siècles, ses différents aménagements ont fait éclore<br/>
+            un lieu dynamique où passer du temps.
+          </div>
         </div>
-        <button onClick={() => nextPage()} title="page suivante">→</button>
       </div>
       <div className="down-arrow">↓</div>
       <div className="container">
@@ -203,8 +213,8 @@ const MapView = forwardRef((props, ref) => {
             <img className='map-img' src="./img/page1/PLAN-3-5.jpg" id="img-4"/>
             <img className='map-img' src="./img/page1/PLAN-4.jpg" id="img-5"/>
             <img className='map-img' src="./img/page1/PLAN-5.jpg" id="img-6"/>
-            <img className='map-img' src="./img/page1/PLAN-6.jpg" id="img-7"/>
-            <img className='map-img' src="./img/page1/PLAN-7.jpg" id="img-8"/>
+            <img className='map-img' src="./img/page1/PLAN-7.jpg" id="img-7"/>
+            <img className='map-img' src="./img/page1/PLAN-6.jpg" id="img-8"/>
             <img className='map-img' src="./img/page1/PLAN-8.jpg" id="img-9"/>
           </div>
           <div className="map-text-container">
@@ -229,7 +239,6 @@ const MapView = forwardRef((props, ref) => {
         <div id="project07" className="project"/>
         <div id="project08" className="project"/>
         <div id="project09" className="project"/>
-        <button className='topBtn' onClick={() => scrollTo()}>haut</button>
     </div>
   )
 })

@@ -6,7 +6,8 @@ const Footer = () => {
 
   return (
     <footer className="page">
-      <p>Parc Heller © {date}</p>
+      <p id="footer-text">Parc Heller © {date}</p>
+      <p id="footer-mention">infos pratiques - mentions légales</p>
     </footer>
   )
 }
