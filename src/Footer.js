@@ -1,13 +1,15 @@
 import './App.css'
+import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom'
+
 
 const Footer = () => {
   
   const date = new Date().getFullYear()
 
   return (
-    <footer className="page">
+    <footer>
       <p id="footer-text">Parc Heller © {date}</p>
-      <a href="./info" id="footer-mention">infos pratiques - mentions légales</a>
+      <Link to="./info" id="footer-mention">infos pratiques - mentions légales</Link>
     </footer>
   )
 }

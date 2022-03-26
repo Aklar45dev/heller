@@ -231,7 +231,7 @@ html{
   max-width: 70%;
   min-width: 1000px;
   display: none;
-  height: 60%;
+  height: 70%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -382,7 +382,7 @@ html{
 
 .icon-scroll{
   position: fixed;
-  transform: translate(950%, -105%) scale(0.5);
+  transform: translate(950%, -75%) scale(0.5);
   width: 5%;
   opacity: 0.9;
   pointer-events: none;
@@ -429,6 +429,7 @@ html{
   bottom: 0;
   right: 0;
   margin: 4em;
+  margin-bottom: 1em;
   margin-right: 10%;
   font-family: 'Montserrat', sans-serif;
   color:rgb(112, 255, 213); 
@@ -616,9 +617,12 @@ margin-bottom: -4em;
 
 .videoPlayerInterview{
   top: 0;
+  border-radius: 1em;
 }
 
 .video-container{
+  width: 60%;
+  margin-left: 20%;
   margin-top: 3em;
   margin-bottom: 10em;
   display: flex;
@@ -784,9 +788,10 @@ footer{
   display: flex;
   justify-content: center;
   bottom: 0;
-  position: fixed;
-  z-index: -1000;
-  width: 100%;
+  position: relative;
+  z-index: 1;
+  width: 50%;
+  margin-left: 25%;
 }
 
 footer p {

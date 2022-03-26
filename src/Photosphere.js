@@ -18,6 +18,7 @@ const Photosphere = props => {
     props.lecteur.play()
     $('body').css({overflow: 'hidden'})
     $('#footer-text').css({display: 'block'})
+    $('footer').css({position: 'absolute'})
     $('#home-link').css({display: 'block'})
     $('#footer-mention').css({display: 'none'})
   })

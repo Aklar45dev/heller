@@ -6,7 +6,6 @@ import { useHistory } from 'react-router-dom'
 const Info = props => {
 
   $(() => {
-    props.lecteur.pause()
     $('#footer-text').css({display: 'block'})
     $('#home-link').css({display: 'block'})
     $('#footer-mention').css({display: 'none'})

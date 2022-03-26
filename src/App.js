@@ -82,7 +82,7 @@ const App = () => {
         <Route path='/next'  component={() => <Suivre  lecteur={sphereAudio}/>} />
         <Route path='/' component={() => <Home  lecteur={sphereAudio} hasLaunched={hasLaunched} didLaunch={didLaunch}  timerRun={timerRun} timerRuns={timerRuns}/>} />
       </Switch>
-      <Footer id="footer"/>
+      <Footer id="footerId"/>
     </Router>
   )
 }

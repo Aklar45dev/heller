@@ -12,9 +12,9 @@ const MapView = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({
 
     display() {
-      const myTimeout = setTimeout(myGreeting, 1000);
+      const myTimeout = setTimeout(myGreeting, 500)
       function myGreeting() {
-        clearTimeout(myTimeout);
+        clearTimeout(myTimeout)
         $(window).scrollTop(10)
       }
     }
