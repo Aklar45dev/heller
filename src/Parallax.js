@@ -31,11 +31,14 @@ const Parallax = props => {
     <div className="page">
       <div className="gradient"><img src="./gradient.png" /></div>
       <div className="gradient2"><img src="./gradient.png" /></div>
-      <div className="header-page">
+      <div className="header-page-scroll">
         <div className="text-wrappper">
           <div className="page-title-font">L’ÉMERGENCE D’UN GRAND PROJET</div>
           <div className="page-subtitle-font">réaménagement du parc heller</div>
         </div>
+      </div>
+      <div className="video-container">
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/601Wt-967Bk" title="YouTube video player" allowfullscreen></iframe>
       </div>
     </div>
   )

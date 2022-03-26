@@ -615,12 +615,12 @@ margin-bottom: -4em;
 }
 
 .videoPlayerInterview{
-  height: 60%;
   top: 0;
 }
 
 .video-container{
-  margin-top: 5em;
+  margin-top: 3em;
+  margin-bottom: 10em;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -670,6 +670,28 @@ margin-bottom: -4em;
   border: transparent;
   transform: scale(25%);
   cursor: pointer;
+}
+
+.info-container{
+  margin-top: 3em;
+  margin-bottom: 10em;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  color:rgb(255, 255, 255); 
+  font-weight: 400;
+  font-size: 1em;
+}
+
+.info-title{
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #cafe9b;
+}
+
+.info-subtitle{
+color: #cafe9b;
+  font-weight: 700;
+  font-size: 1.1em;
 }
 
 @keyframes float1 {
@@ -899,6 +921,7 @@ footer p {
 .launcher-btn-container button:hover{
   opacity: 1;
   transition: all 0.25s;
+  transform: scale(1.1) translateY(-25px);
 }
 
 .launcher-btn-container button:active{

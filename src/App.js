@@ -2,6 +2,7 @@ import './App.css'
 import Home from './Home'
 import Photosphere from './Photosphere'
 import Map from './Map'
+import Info from './Info'
 import MapView from './MapView'
 import Podcast from './Podcast'
 import Interview from './Interview'
@@ -72,7 +73,8 @@ const App = () => {
         <MapView ref={el => MapRef.current = el} />
       </div>
       <Switch>
-        <Route path='/parallax' component={() => <Parallax lecteur={sphereAudio} timerRun={timerRun} timerRuns={timerRuns}/>} />
+        <Route path='/parallax' component={() => <Parallax lecteur={sphereAudio}/>} />
+        <Route path='/info' component={() => <Info lecteur={sphereAudio}/>} />
         <Route path='/photosphere' component={() => <Photosphere lecteur={sphereAudio} />} />
         <Route path='/map' component={() => <Map lecteur={sphereAudio} showMap={showMap} />}/>
         <Route path='/podcast' component={() => <Podcast lecteur={sphereAudio}/>} />

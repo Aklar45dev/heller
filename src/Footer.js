@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="page">
       <p id="footer-text">Parc Heller © {date}</p>
-      <p id="footer-mention">infos pratiques - mentions légales</p>
+      <a href="./info" id="footer-mention">infos pratiques - mentions légales</a>
     </footer>
   )
 }
