@@ -20,6 +20,10 @@ const MapView = forwardRef((props, ref) => {
     }
     
   }))
+
+  $(() => {
+  })
+
   useEffect(() => {
 
     //ScrollMagicPluginIndicator(ScrollMagic)

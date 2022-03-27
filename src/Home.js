@@ -17,7 +17,7 @@ const Home = props => {
     $('body').css({overflow: 'visible'})
     $("body").removeClass("none")
     $('#consul').css({display: 'block'})
-    $('footer').css({position: 'relative'})
+    $('footer').css({position: 'absolute'})
 
     if(!props.hasLaunched){
       $('#footer-mention').css({display: 'none'})
@@ -104,7 +104,7 @@ const Home = props => {
   return (
     <div className="page">
       <div className="home-vid-container" id="homeVid">
-        <video id='mainVid' src="https://heller-bucker.s3.eu-west-3.amazonaws.com/Intro-B%C3%A9ta_1.mp4" onEnded={() => endVideo()} />
+        <video id='mainVid' controls='controls' src="https://heller-bucker.s3.eu-west-3.amazonaws.com/film+intro_1.mp4" onEnded={() => endVideo()} />
         <button onClick={() => endVideo()} className='skip'>{skip}</button>
       </div>
       <div className="launcher" id='launch'>

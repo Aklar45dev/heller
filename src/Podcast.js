@@ -14,11 +14,6 @@ const Podcast = props => {
     $('#logo').removeClass("logo-home")
     window.addEventListener( 'pointermove', parallaxUpdate )
     props.lecteur.pause()
-    $('#before').fadeOut(0)
-    $('#before2').fadeOut(0)
-    $('#after2').fadeOut(0)
-    $('#before3').fadeOut(0)
-    $('#after3').fadeOut(0)
     $('body').css('cursor', 'default')
     $('#footer-text').css({display: 'block'})
     $('#home-link').css({display: 'block'})
@@ -29,6 +24,8 @@ const Podcast = props => {
     $('#pause').css({display: 'none'})
     $('.page').fadeOut(0).fadeIn(1000)
     $('.logo').fadeOut(0).fadeIn(1000)
+    $('footer').css({position: 'relative'})
+    switchSlide(1)
   },[])
 
   const parallaxUpdate = event => {
@@ -103,28 +100,28 @@ const Podcast = props => {
     $('#btn6').removeClass('pod-btn-on')
     switch (id) {
       case 1:
-        $('#after').fadeIn(500)
-        $('#btn1').addClass('pod-btn-on')
-        break;
-      case 2:
-        $('#btn2').addClass('pod-btn-on')
-        $('#after2').fadeIn(500)
-        break;
-      case 3:
-        $('#btn3').addClass('pod-btn-on')
-        $('#after3').fadeIn(500)
-        break;
-      case 4:
         $('#btn4').addClass('pod-btn-on')
         $('#before').fadeIn(500)
         break;
-      case 5:
+      case 2:
         $('#btn5').addClass('pod-btn-on')
         $('#before2').fadeIn(500)
         break;
-      case 6:
+      case 3:
         $('#btn6').addClass('pod-btn-on')
         $('#before3').fadeIn(500)
+        break;
+      case 4:
+        $('#after').fadeIn(500)
+        $('#btn1').addClass('pod-btn-on')
+        break;
+      case 5:
+        $('#btn2').addClass('pod-btn-on')
+        $('#after2').fadeIn(500)
+        break;
+      case 6:
+        $('#btn3').addClass('pod-btn-on')
+        $('#after3').fadeIn(500)
         break;
     }
   }
@@ -185,15 +182,15 @@ const Podcast = props => {
             </div>
           </div>
           <div className='pod-btn-container'>
-            <button className="pod-btn pod-btn-on" id="btn1" onClick={() => switchSlide(1)}></button>
-            <button className="pod-btn" id="btn2" onClick={() => switchSlide(2)}></button>
-            <button className="pod-btn" id="btn3" onClick={() => switchSlide(3)}></button>
-            <button className="pod-btn" id="btn4" onClick={() => switchSlide(4)}></button>
-            <button className="pod-btn" id="btn5" onClick={() => switchSlide(5)}></button>
-            <button className="pod-btn" id="btn6" onClick={() => switchSlide(6)}></button>
+            <button className="pod-btn pod-btn-on" id="btn4" onClick={() => switchSlide(1)}></button>
+            <button className="pod-btn" id="btn5" onClick={() => switchSlide(2)}></button>
+            <button className="pod-btn" id="btn6" onClick={() => switchSlide(3)}></button>
+            <button className="pod-btn" id="btn1" onClick={() => switchSlide(4)}></button>
+            <button className="pod-btn" id="btn2" onClick={() => switchSlide(5)}></button>
+            <button className="pod-btn" id="btn3" onClick={() => switchSlide(6)}></button>
           </div>
           <div className="podPlayer">
-            <AudioPlayer autoPlay src="https://heller-bucker.s3.eu-west-3.amazonaws.com/RUGBY.mp3"/>
+            <AudioPlayer muted autoPlay src="https://heller-bucker.s3.eu-west-3.amazonaws.com/RUGBY.mp3"/>
           </div>
       </div>
     </div>

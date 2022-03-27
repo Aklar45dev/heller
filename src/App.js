@@ -17,9 +17,9 @@ const App = () => {
 
   const sphereAudio = new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/fond-sonore.mp3")
   sphereAudio.loop = true
-  //sphereAudio.muted = true
+  sphereAudio.muted = true
   sphereAudio.volume = 0.6
-  let hasLaunched = false
+  let hasLaunched = true
   let timerRun = false
 
   $(() => {
@@ -60,29 +60,32 @@ const App = () => {
 
   return (
     <Router>
-      <div id="logo-container">
-        <Link className="logo" id="logo" onClick={() => pauseAudio()} to="/">
-          <img src="./LOGO.png"/>
-        </Link>
-        <Link id="home-link" onClick={() => pauseAudio()} to="/">{accueil}</Link>
-      </div>
-      <div id="consultation-container">
-        <Link className="consul" id="consul" onClick={() => pauseAudio()} to="/"><img src="./cosultation.png"/></Link>
-      </div>
-      <div id="MapView">
-        <MapView ref={el => MapRef.current = el} />
-      </div>
-      <Switch>
-        <Route path='/parallax' component={() => <Parallax lecteur={sphereAudio}/>} />
-        <Route path='/info' component={() => <Info lecteur={sphereAudio}/>} />
-        <Route path='/photosphere' component={() => <Photosphere lecteur={sphereAudio} />} />
-        <Route path='/map' component={() => <Map lecteur={sphereAudio} showMap={showMap} />}/>
-        <Route path='/podcast' component={() => <Podcast lecteur={sphereAudio}/>} />
-        <Route path='/interview'  component={() => <Interview  lecteur={sphereAudio}/>} />
-        <Route path='/next'  component={() => <Suivre  lecteur={sphereAudio}/>} />
-        <Route path='/' component={() => <Home  lecteur={sphereAudio} hasLaunched={hasLaunched} didLaunch={didLaunch}  timerRun={timerRun} timerRuns={timerRuns}/>} />
-      </Switch>
-      <Footer id="footerId"/>
+        <div className='paysage'>
+          <p>Mettrez l'appareil en position paysage</p>
+        </div>
+        <div id="logo-container">
+          <Link className="logo" id="logo" onClick={() => pauseAudio()} to="/">
+            <img src="./LOGO.png"/>
+          </Link>
+          <Link id="home-link" onClick={() => pauseAudio()} to="/">{accueil}</Link>
+        </div>
+        <div id="consultation-container">
+          <Link className="consul" id="consul" onClick={() => pauseAudio()} to="/"><img src="./cosultation.png"/></Link>
+        </div>
+        <div id="MapView">
+          <MapView ref={el => MapRef.current = el} />
+        </div>
+        <Switch>
+          <Route path='/parallax' component={() => <Parallax lecteur={sphereAudio}/>} />
+          <Route path='/info' component={() => <Info lecteur={sphereAudio}/>} />
+          <Route path='/photosphere' component={() => <Photosphere lecteur={sphereAudio} />} />
+          <Route path='/map' component={() => <Map lecteur={sphereAudio} showMap={showMap} />}/>
+          <Route path='/podcast' component={() => <Podcast lecteur={sphereAudio}/>} />
+          <Route path='/interview'  component={() => <Interview  lecteur={sphereAudio}/>} />
+          <Route path='/next'  component={() => <Suivre  lecteur={sphereAudio}/>} />
+          <Route path='/' component={() => <Home  lecteur={sphereAudio} hasLaunched={hasLaunched} didLaunch={didLaunch}  timerRun={timerRun} timerRuns={timerRuns}/>} />
+        </Switch>
+        <Footer id="footerId"/>
     </Router>
   )
 }

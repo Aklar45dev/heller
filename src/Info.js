@@ -15,6 +15,7 @@ const Info = props => {
     $('.page').fadeOut(0).fadeIn(1000)
     $('.logo').fadeOut(0).fadeIn(1000)
     $('#logo').removeClass("logo-home")
+    $('footer').css({position: 'relative'})
     $('#logo-container').removeClass("logo-container-center")
   },[])
 

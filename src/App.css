@@ -84,12 +84,12 @@ html{
 
 .logo-home{
   width: 30em;
+  align-items: center;
 }
 
 .logo-container-center {
   display: flex;
   justify-content: center;
-  height: 44em;
 }
 
 .introLogo{
@@ -102,8 +102,9 @@ html{
 .menu-container{
   position: absolute;
   display: flex;
-  top: 40%;
+  top: 0;
   width: 100%;
+  height: 100%;
   justify-content: space-around;
   align-items: center;
 }
@@ -118,7 +119,6 @@ html{
 }
 
 .link-menu img {
-  margin: 2em;
   width: 80%;
 }
 
@@ -350,7 +350,6 @@ html{
 
 .photosphere{
   overflow-y: hidden !important;
-  background-image: linear-gradient(rgba(0, 0, 0,0.5),rgba(0, 0, 0,0));
 }
 
 .para-unveil{
@@ -434,7 +433,7 @@ html{
   font-family: 'Montserrat', sans-serif;
   color:rgb(112, 255, 213); 
   font-size: 1.5em;
-  padding-bottom: 1.4em;
+  padding-bottom: 2.5em;
   border: 0;
   font-weight: 700;
   background: transparent;
@@ -621,13 +620,20 @@ margin-bottom: -4em;
 }
 
 .video-container{
-  width: 60%;
-  margin-left: 20%;
-  margin-top: 3em;
-  margin-bottom: 10em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
   display: flex;
+  height: 100%;
+  width: 100%;
+  background-color:rgba(0, 0, 0, 1);
   justify-content: center;
-  align-content: center;
+}
+
+.video-container video{
+  width: auto;
+  height: 100%;
 }
 
 .pod-container{
@@ -858,19 +864,18 @@ footer p {
   display: flex;
   z-index: -1;
   position: absolute;
-  width: 50%;
+  width: 100%;
+  min-width: 800px;
   top: 0;
   left: 0;
   pointer-events: none;
-  margin-left: 12.5%;
+  transform: scale(0.5) translateY(-50%);
 }
 
 .para-pic{
   position: absolute;
-  width: 60%;
   left: 0;
   top: 0;
-  margin: 20%;
   margin-top: 0;
   margin-bottom: 0;
   pointer-events: none;
@@ -1028,5 +1033,115 @@ footer p {
   box-shadow: 5px 5px 20px #00000030;
   z-index: 50;
   margin-bottom: 8em;
+}
+
+.paysage{
+  display: none; 
+  background-color: rgb(46, 46, 81);
+  color: #cafe9b;
+  background-color: rgb(46, 46, 81);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1000000;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .paysage{
+    display: flex; 
+    color: #cafe9b;
+    background-color: rgb(46, 46, 81);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1000000;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+  } 
+}
+
+@media only screen and (max-width: 920px) {
+
+  .launcher-btn-container button img{
+    width: 250px;
+  }
+
+  .consul{
+    width: 8em;
+    margin-top: 1em;
+  }
+
+  .page-title-font{
+    font-size: 1em;
+  }
+
+  .logo{
+    margin-top: 1.5em;
+    margin-left: 1.0em;
+  }
+
+  .logo img {
+    width: 50%;
+  }
+
+  .page-subtitle-font{
+    font-size: 0.8em;
+
+  }
+
+  .link-menu{
+    margin: 0;
+    margin-left:1.0em;
+  }
+
+  #home-link{
+    margin-top: 3.5em !important;
+    margin-left: 1.25em !important;
+  }
+
+  .page-para{
+    width: 50%;
+  }
+
+  .patenaire-container{
+    padding-left: 3.5em !important;
+    grid-template: auto / 100% !important;
+
+  }
+
+  .page-subtitle-font-left{
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .page-para-left{
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  br {
+    display: none;
+  }
+
+  .para-unveil{
+    height: 15.5em !important;
+  }
+
+  .para-unveil img{
+    width: 400px;
+  }
+
+  .pod-arrow-container{
+    transform: translateY(60%) translateX(-50%) scale(0.75) !important
+  }
+
+
 }
 
