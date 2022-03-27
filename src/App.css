@@ -19,6 +19,12 @@ time, mark, audio, video {
 html{
   background-color: rgb(46, 46, 81);
   overflow-x: hidden !important;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
 }
 
 ::-webkit-scrollbar {
@@ -554,7 +560,7 @@ margin-bottom: -4em;
 }
 
 .project {
-  height: 500px;
+  height: 400px;
   background-color: rgba(0, 0, 0, 0);
   margin: 1em;
   padding-top: 2em;
@@ -1061,7 +1067,7 @@ footer p {
     background-color: rgb(46, 46, 81);
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     z-index: 1000000;
     align-items: center;
     justify-content: center;
@@ -1133,9 +1139,7 @@ footer p {
   .page-para-left{
     padding-left: 2.5em;
   }
-
   
-
   .para-unveil{
     height: 15.5em !important;
   }
@@ -1166,13 +1170,13 @@ footer p {
   }
 
   .map-title{
-    font-size: 0.6em;
-    line-height: 0.2em;
+    font-size: 0.7em;
+    line-height: 0em;
   }
   
   .date{
-    font-size: 0.6em;
-    line-height: 0.2em;
+    font-size: 1em;
+    line-height: 0.0em;
   }
 
   .card-container {
