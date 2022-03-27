@@ -17,6 +17,8 @@ const Info = props => {
     $('#logo').removeClass("logo-home")
     $('footer').css({position: 'relative'})
     $('#logo-container').removeClass("logo-container-center")
+    $('#consul').fadeOut(500)
+
   },[])
 
   return (
@@ -24,7 +26,7 @@ const Info = props => {
       <div className="gradient"><img src="./gradient.png" /></div>
       <div className="gradient2"><img src="./gradient.png" /></div>
       <div className="header-page-scroll">
-        <div className="text-wrappper">
+        <div className="text-wrappper info">
           <div className="page-title-font">infos pratiques - mentions légales</div>
           <div className="info-container">
           <span className='info-title'>INFOS PRATIQUES</span><br/><br/>

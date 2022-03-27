@@ -15,7 +15,9 @@ $link-home: #00ff95;
   top: 0;
   .text-wrappper{
     height: auto;
-    
+    display: flex;
+    flex-direction:column;
+    align-items: center;
   }
   button {
     margin-left: 1em;

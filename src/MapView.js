@@ -200,7 +200,7 @@ const MapView = forwardRef((props, ref) => {
         <div className="text-wrappper">
           <div className="page-title-font">AUX ORIGINES DU PARC</div>
           <div className="page-subtitle-font">de 1870 à nos jours</div>
-          <div className="page-para">
+          <div className="page-para map-text">
             Le parc Heller est un témoin de l'histoire d'Antony.<br/>
             À travers les siècles, ses différents aménagements ont fait éclore<br/>
             un lieu dynamique où passer du temps.

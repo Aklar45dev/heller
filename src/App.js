@@ -17,9 +17,9 @@ const App = () => {
 
   const sphereAudio = new Audio("https://heller-bucker.s3.eu-west-3.amazonaws.com/fond-sonore.mp3")
   sphereAudio.loop = true
-  sphereAudio.muted = true
+  //sphereAudio.muted = true
   sphereAudio.volume = 0.6
-  let hasLaunched = true
+  let hasLaunched = false
   let timerRun = false
 
   $(() => {
@@ -61,7 +61,8 @@ const App = () => {
   return (
     <Router>
         <div className='paysage'>
-          <p>Mettrez l'appareil en position paysage</p>
+          <p>Tournez l'appareil en position paysage</p>
+          <img src="./landscape.png" />
         </div>
         <div id="logo-container">
           <Link className="logo" id="logo" onClick={() => pauseAudio()} to="/">

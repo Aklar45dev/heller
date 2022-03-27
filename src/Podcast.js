@@ -190,7 +190,7 @@ const Podcast = props => {
             <button className="pod-btn" id="btn3" onClick={() => switchSlide(6)}></button>
           </div>
           <div className="podPlayer">
-            <AudioPlayer muted autoPlay src="https://heller-bucker.s3.eu-west-3.amazonaws.com/RUGBY.mp3"/>
+            <AudioPlayer autoPlay src="https://heller-bucker.s3.eu-west-3.amazonaws.com/RUGBY.mp3"/>
           </div>
       </div>
     </div>

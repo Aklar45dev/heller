@@ -42,7 +42,7 @@ const Interview =props => {
         </div>
       </div>
       <div className="inter-vid-container">
-        <video className="videoPlayerInterview" muted src="https://heller-bucker.s3.eu-west-3.amazonaws.com/ITV-SMVB%26MGP_1_1.mp4" preload="auto" controls={true} autoPlay='autoPlay' />
+        <video className="videoPlayerInterview" src="https://heller-bucker.s3.eu-west-3.amazonaws.com/ITV-SMVB%26MGP_1_1.mp4" preload="auto" controls={true} autoPlay='autoPlay' />
         <div className='acteurs1'>
           <p className="page-subtitle-font-left">LES ACTEURS ET PARTENAIRES DE LA RENATURATION DE LA BIÈVRE</p>
           <p className="page-para-left">Afin de réaliser ce projet, la Ville d'Antony est entourée de différents acteurs:</p>
