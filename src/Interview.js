@@ -34,11 +34,7 @@ const Interview =props => {
       <div className="header-page-scroll">
         <div className="text-wrappper">
           <div className="page-title-font">RENAISSANCE D’UNE RIVIÈRE</div>
-          <div className="page-subtitle-font">la réouverture de la bièvre</div>
-          <div className="page-para">
-          Le projet de renaissance de la Bièvre mobilise de nombreux acteurs qui,<br/> 
-          ensemble, amorcent une nouvelle approche de la nature en milieu urbain.
-          </div>
+          <div className="page-subtitle-font">les acteurs de la réouverture de la Bièvre</div>
         </div>
       </div>
       <div className="inter-vid-container">

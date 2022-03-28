@@ -37,15 +37,16 @@ const Card = forwardRef((props, ref) => {
         <div className="card">
           <div className="">
             <ImageGallery items={props.point.img} showBullets={true} showFullscreenButton={true} showNav={true} showPlayButton={false} slideDuration={250} slideInterval={5000}/>
-          {props.audio[parseInt(props.point.name)-1].src !== undefined ?
+          
+          </div>
+          <div className="card-content">
+            <h2>{props.point.title}</h2>
+            <p className={props.audio[parseInt(props.point.name)-1].src !== undefined ? `` : `card-text-full`}>{props.point.text}</p>
+            {props.audio[parseInt(props.point.name)-1].src !== undefined ?
             <div className="player-container-card">
               <ReactAudioPlayer ref={player} src={props.audio[parseInt(props.point.name)-1].src}/>
             </div> : <div/>
           }
-          </div>
-          <div className="card-content">
-            <h2>{props.point.title}</h2>
-            <p className="card-text">{props.point.text}</p>
           </div>
         </div>
       </div>

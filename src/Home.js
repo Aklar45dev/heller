@@ -120,7 +120,12 @@ const Home = props => {
         <img id='para-5' className="para-pic" src="./img/page5/5.png"/>
       </div>
       </div>
+        
       <div className="menu-container">
+        <div className="page-para-home">
+          Une expérience interactive documentaire vous plonge dans l’histoire du Parc Heller. 
+          Comprenez les enjeux de son réaménagement pour mieux répondre à la consultation.
+        </div>
         <Link id="map-link" className="link-menu" to="/map"><img src="./img/menu/aux-origines.png" /></Link>
         <Link id="photo-link" className="link-menu" to="/photosphere"><img src="./img/menu/fil-eau.png" /></Link>
         <Link id="pod-link" className="link-menu" to="/podcast"><img src="./img/menu/PLAINE-DE-SPORT.png" /></Link>

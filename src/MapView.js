@@ -19,6 +19,7 @@ const MapView = forwardRef((props, ref) => {
         clearTimeout(myTimeout)
         $(window).scrollTop(10)
         top = 200
+        $('#down-arrow').css({opacity: 1})
       }
     }
     
@@ -149,6 +150,22 @@ const MapView = forwardRef((props, ref) => {
       $('#el-7').css({opacity: event.progress*2}) 
     })
 
+    //scene7-5
+    const Scene75 = new ScrollMagic.Scene({
+      triggerElement: '#project07-5',
+      triggerHook: 0.5,
+      reverse: true,
+      duration: '100%'
+    })
+    .setClassToggle('#project07-5', 'fade-in') //add class to project02
+    .addTo(controller)
+
+    Scene75.on("progress",  event => {
+      $('#el-7').css({opacity:0}) 
+      $('#img-7-5').css({opacity: event.progress*2}) 
+      $('#el-7-5').css({opacity: event.progress*2}) 
+    })
+
     //scene8
     const Scene8 = new ScrollMagic.Scene({
       triggerElement: '#project08',
@@ -160,9 +177,11 @@ const MapView = forwardRef((props, ref) => {
     .addTo(controller)
 
     Scene8.on("progress",  event => {
-      $('#el-7').css({opacity: 0}) 
+      $('#el-7-5').css({opacity: 0}) 
       $('#img-8').css({opacity: event.progress*2}) 
-      $('#el-8').css({opacity: event.progress*2}) 
+      $('#el-8').css({opacity: event.progress*2})
+      $('#down-arrow').css({opacity: 1})
+
     })
 
     //scene9
@@ -176,7 +195,8 @@ const MapView = forwardRef((props, ref) => {
     .addTo(controller)
 
     Scene9.on("progress",  event => {
-      $('#el-8').css({opacity: 0}) 
+      $('#el-8').css({opacity: 0})
+      $('#down-arrow').css({opacity: 0})
       $('#img-9').css({opacity: event.progress*2}) 
       $('#el-9').css({opacity: event.progress*2}) 
     })
@@ -214,13 +234,12 @@ const MapView = forwardRef((props, ref) => {
           <div className="page-title-font">AUX ORIGINES DU PARC</div>
           <div className="page-subtitle-font">de 1870 à nos jours</div>
           <div className="page-para map-text">
-            Le parc Heller est un témoin de l'histoire d'Antony.<br/>
-            À travers les siècles, ses différents aménagements ont fait éclore<br/>
-            un lieu dynamique où passer du temps.
+          Témoin de l’histoire d’Antony, le Parc Heller a traversé les époques arborant<br/>
+          bien des visages. Découvrez l’historique de ses aménagements.
           </div>
         </div>
       </div>
-      <button onClick={() => scrollDown()} className="down-arrow">↓</button>
+      <button onClick={() => scrollDown()} className="down-arrow" id='down-arrow'>↓</button>
       <div className="container">
         <div className="map-container">
           <div className="map-img-container">
@@ -231,19 +250,21 @@ const MapView = forwardRef((props, ref) => {
             <img className='map-img' src="./img/page1/PLAN-4.jpg" id="img-5"/>
             <img className='map-img' src="./img/page1/PLAN-5.jpg" id="img-6"/>
             <img className='map-img' src="./img/page1/PLAN-7.jpg" id="img-7"/>
+            <img className='map-img' src="./img/page1/PLAN-7-5.jpg" id="img-7-5"/>
             <img className='map-img' src="./img/page1/PLAN-6.jpg" id="img-8"/>
             <img className='map-img' src="./img/page1/PLAN-8.jpg" id="img-9"/>
           </div>
           <div className="map-text-container">
-            <div className="map-el" id="el-1"><span className="date">1870 </span><br/><span className="map-title">Le <strong>moulin</strong> de la seigneurie d’Antony est situé au bord de la Bièvre. Il est mentionné dès 1248 dans certains écrits seigneuriaux. Avec l’âge industriel, la force hydraulique, devenue insuffisante, est doublée en 1870 par une <strong>machine à vapeur</strong> qui actionne une roue métallique.</span></div>
-            <div className="map-el" id="el-2"><span className="date">1880 </span><br/><span className="map-title">Le <strong>château Saran</strong> est construit à l’emplacement de la « Folie » du marquis de Castries. Cette résidence privée est la propriété de la <strong>famille Jomain</strong>.</span></div>
-            <div className="map-el" id="el-3"><span className="date">1938 </span><br/><span className="map-title">Acquisition par la ville d’Antony du château Saran. Après avoir abrité pendant un temps une bibliothèque municipale, il fut de 1977 à 1996 le siège du conservatoire municipal de musique Darius Milhaud.</span></div>
-            <div className="map-el" id="el-4"><span className="date">1940 </span><br/><span className="map-title">Création du bassin plus tard appelé « <strong>l’étang du Soleil</strong> », creusé à la pelle par un Antonien, Jean Proska, qui a agrandit ce qui était à l’origine une marre. Il a ensuite attiré les passionnés de canotage en proposant des barques à louer sur l’étang.</span></div>
-            <div className="map-el" id="el-5"><span className="date">1945 </span><br/><span className="map-title">Devenu municipal, le parc <strong>prend le nom de Georges Heller</strong>, conseiller municipal communiste mort en déportation à Flossenbürg le 28 décembre 1944.</span></div>
-            <div className="map-el" id="el-6"><span className="date">1950 </span><br/><span className="map-title">La municipalité envisage plusieurs projets <strong>de terrains sportifs</strong> au milieu du parc. Finalement, deux terrains y seront aménagés, et bien plus tard une<strong> tribune et des vestiaires</strong>.</span></div>
-            <div className="map-el" id="el-7"><span className="date">1956 </span><br/><span className="map-title">Des travaux sont entrepris pour<strong> canaliser la Bièvre</strong>, modifier son tracé, creuser un bassin de retenue de la Bièvre qui sera classé réserve naturelle régionale en 2009. Des peupliers sont plantés pour absorber l’eau en excédent dans les sols. La rivière devient alors souterraine sur les onze kilomètres de son tracé, entre Antony et Paris, dont 600 m au sein du Parc Heller. Elle poursuit son chemin, canalisée dans Antony, par la rue de l’ Abreuvoir et traverse les quartiers du Centre-ville. En effet, son niveau de pollution et l’odeur générée par les nombreuses industries (tannerie, teinturerie,…) installées le long de son cours devenaient préoccupants.</span></div>
-            <div className="map-el" id="el-8"><span className="date">1993-1994 </span><br/><span className="map-title">La Ville entreprend un <strong>grand réaménagement</strong> du parc Heller. Des <strong>aires de jeux</strong> proches du château Saran voient le jour, ainsi que le <strong>poneyland</strong> et le belvédère. Afin de le rendre plus harmonieux, des <strong>fontaines</strong>, des <strong>statues</strong> et un <strong>miroir d’eau </strong>sont installés. La Ville en profite également pour renouveler les plantations boisées et rafraîchir le sous-bois.</span></div>
-            <div className="map-el" id="el-9"><span className="date">2020-2021 </span><br/><span className="map-title">Les <strong>aires de jeux</strong> sont progressivement renouvelées. La faune et la flore du parc s’épanouissent pendant le confinement. Des <strong>orchidées protégées</strong> sont découvertes. De<strong> nouvelles passerelles</strong> permettent de traverser le ru des Godets. Des <strong>équipements sportifs</strong> sont installés à l’occasion de la deuxième édition du budget participatif antonien. Et les<strong> vestiaires du rugby déménagent</strong> au stade de la Grenouillère.</span></div>
+            <div className="map-el" id="el-1"><span className="date">1870 </span><br/><span className="map-title">Le moulin de la seigneurie d’Antony est situé au bord de la Bièvre.  Il est mentionné dès 1248 dans certains écrits seigneuriaux. Actionné par la Bièvre, il permettait aux habitants de moudre leur grain contre paiement de redevances. Inutilisable aujourd’hui, il est pourtant toujours visible depuis la rue Prosper-Legouté.</span></div>
+            <div className="map-el" id="el-2"><span className="date">1880 </span><br/><span className="map-title">Le parc Heller a vu s’ériger de nombreux édifices, seul le château Sarran construit  en 1880 à résister aux guerres. Cette résidence privée est la propriété de la famille Jomain.</span></div>
+            <div className="map-el" id="el-3"><span className="date">1938 </span><br/><span className="map-title">La Ville d’Antony acquiert le château Sarran. Après avoir abrité pendant un temps une bibliothèque municipale, il est de 1977 à 1996 le siège du conservatoire municipal de musique Darius-Milhaud.</span></div>
+            <div className="map-el" id="el-4"><span className="date">1940 </span><br/><span className="map-title">Création du bassin plus tard appelé « l’étang du Soleil », creusé à la pelle par un Antonien, Jean Proska, qui a agrandit ce qui était à l’origine une mare. Il a ensuite attiré les passionnés de canotage en proposant des barques à louer.</span></div>
+            <div className="map-el" id="el-5"><span className="date">1945 </span><br/><span className="map-title">Le parc prend le nom de Georges Heller, conseiller municipal communiste mort en déportation à Flossenbürg le 28 décembre 1944.</span></div>
+            <div className="map-el" id="el-6"><span className="date">1950 </span><br/><span className="map-title">La municipalité envisage plusieurs projets de terrains sportifs au milieu du parc. Finalement, deux terrains de rugby y seront aménagés, et bien plus tard une tribune et des vestiaires.</span></div>
+            <div className="map-el" id="el-7"><span className="date">1956 </span><br/><span className="map-title">Des travaux sont entrepris pour canaliser la Bièvre et modifier son tracé. Son niveau de pollution et l’odeur générée par les industries (tanneries, teintureries…) devenaient préoccupants.. La rivière devient alors souterraine sur onze kilomètres, entre Antony et Paris, dont 600 m au sein du Parc Heller. Elle poursuit son chemin, canalisée dans Antony, par la rue de l’ Abreuvoir et traverse les quartiers du Centre-ville.</span></div>
+            <div className="map-el" id="el-7-5"><span className="date">1988 </span><br/><span className="map-title">Ouverture d’un centre équestre où les enfants peuvent s’initier à l’équitation. Attenante aux écuries, une ferme pédagogique accueille poules, lapins, canards, vaches et moutons jusqu’en 2017.</span></div>
+            <div className="map-el" id="el-8"><span className="date">1993-1994 </span><br/><span className="map-title">La Ville entreprend un grand réaménagement du parc Heller. Des aires de jeux voient le jour.. Afin de le rendre plus harmonieux, des fontaines, des statues et un miroir d’eau sont installés. La Ville en profite également pour renouveler les plantations boisées et rafraîchir le sous-bois.</span></div>
+            <div className="map-el" id="el-9"><span className="date">2020-2021 </span><br/><span className="map-title">Les aires de jeux sont progressivement renouvelées. La faune et la flore du parc s’épanouissent pendant le confinement. Des orchidées protégées sont découvertes. De nouvelles passerelles permettent de traverser le ru des Godets. Des équipements sportifs sont installés à l’occasion de la deuxième édition du budget participatif antonien. Et les vestiaires du rugby déménagent au stade de la Grenouillère.</span></div>
           </div>
         </div>
         </div>
@@ -254,6 +275,7 @@ const MapView = forwardRef((props, ref) => {
         <div id="project05" className="project"/>
         <div id="project06" className="project"/>
         <div id="project07" className="project"/>
+        <div id="project07-5" className="project"/>
         <div id="project08" className="project"/>
         <div id="project09" className="project"/>
     </div>

@@ -135,12 +135,11 @@ const Podcast = props => {
       <div className="gradient2"><img src="./gradient.png" /></div>
       <div className="header-page-scroll">
         <div className="text-wrappper">
-          <div className="page-title-font">TERRE DE SPORT</div>
+          <div className="page-title-font">PLAINES DE SPORT</div>
           <div className="page-subtitle-font">le rugby au coeur du parc</div>
           <div className="page-para">
-          Entre 1940 et 1970, la Ville implante au parc Heller des espaces pour les sportifs,<br/>
-          notamment de grands terrains de rugby. Jusqu’à leur déménagement, les matchs<br/>
-          attireront un public toujours de plus en plus nombreux.
+          En 2020, le club de rugby quitte le Parc Heller.<br/>
+          Comment se réapproprier ces espaces laissés vacants?
           </div>
         </div>
       </div>

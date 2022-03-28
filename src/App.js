@@ -56,7 +56,7 @@ const App = () => {
   }
   
   const MapRef = useRef()
-  const accueil = "< Retour à l'accueil"
+  const accueil = "< Retour"
 
   return (
     <Router>
@@ -71,7 +71,7 @@ const App = () => {
           <Link id="home-link" onClick={() => pauseAudio()} to="/">{accueil}</Link>
         </div>
         <div id="consultation-container">
-          <Link className="consul" id="consul" onClick={() => pauseAudio()} to="/"><img src="./cosultation.png"/></Link>
+          <a className="consul" id="consul" onClick={() => pauseAudio()} href="https://participer.ville-antony.fr/fr-FR/projects/consultation-parc-heller/"><img src="./cosultation.png"/></a>
         </div>
         <div id="MapView">
           <MapView ref={el => MapRef.current = el} />

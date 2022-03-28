@@ -20,6 +20,7 @@ const Map = props => {
     $('#MapView').css({display: 'block'})
     props.showMap()
     $('footer').css({position: 'relative'})
+    
 
   },[])
   

@@ -64,7 +64,7 @@ $link-home: #00ff95;
 }
 
 .rhap_container{
-  margin-top: 1.5em;
+  margin-top: 1.0em;
   border-radius: 1em;
   background-color: rgb(71, 71, 124);
 }
@@ -146,9 +146,9 @@ $link-home: #00ff95;
 
 .sphere-arrow-container button{
   background: transparent;
-  color: $link-color;
+  color: #00ff95;
   font-family: 'Montserrat', sans-serif;
-  font-size: 4em;
+  font-size: 2.5em;
   font-weight: 400;
   border: 0;
   pointer-events: visible;
@@ -203,6 +203,7 @@ $link-home: #00ff95;
   p{
     font-size: 0.5em;
     text-align: initial;
+    font-family: 'Montserrat', sans-serif;
     padding: 1.5em;
     padding-right: 5em;
     padding-left: 0;

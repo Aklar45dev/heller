@@ -173,6 +173,16 @@ html{
   margin-bottom: 3em;
 }
 
+.page-para-home{
+  position: absolute;
+  width: 40%;
+  top: 150px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.08em;
+  color:#cafe9b;
+  text-align: center;
+}
+
 .page-para-bold {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.08em;
@@ -248,7 +258,7 @@ html{
   max-width: 70%;
   min-width: 1000px;
   display: none;
-  height: 70%;
+  height: 56%;
   left: 50%;
   top: 50%;
   z-index: 100;
@@ -391,7 +401,7 @@ html{
 
 .icon-360{
   position: absolute;
-  transform: translate(950%, -175%) scale(0.9);
+  transform: translate(950%, -40%) scale(0.9);
   width: 5%;
   pointer-events: none;
   bottom: 0;
@@ -446,12 +456,12 @@ html{
   position: absolute;
   bottom: 0;
   right: 0;
-  margin: 4em;
-  margin-bottom: 1em;
-  margin-right: 10%;
+  margin: 3em;
+  margin-bottom: 4em;
+  margin-right: 8%;
   font-family: 'Montserrat', sans-serif;
-  color:rgb(112, 255, 213); 
-  font-size: 1.5em;
+  color:rgb(255, 255, 255); 
+  font-size: 1.0em;
   padding-bottom: 2.5em;
   border: 0;
   font-weight: 700;
@@ -559,10 +569,14 @@ margin-bottom: -4em;
   max-width: 100%;
   margin: 0!important;
   overflow-y: scroll;
-  height: auto;
+  height: 48%;
   padding-right: 1.5em;
   background-color: rgba(0, 0, 0, 0.2);
   padding: 1em;
+}
+
+.card-content .card-text-full {
+  height: 95%;
 }
 
 .App {
@@ -596,7 +610,7 @@ margin-bottom: -4em;
   height: auto;
   display: grid;
   z-index: -11;
-  margin-top: 15em;
+  margin-top: 12em;
   background-color:rgba(0, 0, 0, 0);
   pointer-events: none;
 }
@@ -883,11 +897,11 @@ footer p {
   display: flex;
   z-index: -1;
   position: absolute;
-  width: 100%;
+  width: 88%;
   top: 0;
   left: 0;
   pointer-events: none;
-  transform: scale(0.5) translateY(-50%);
+  transform: scale(0.5) translateY(-50%) translateX(12%);
 }
 
 .para-pic{
@@ -957,8 +971,8 @@ footer p {
 }
 
 .launcher-btn-container button img{
-  width: 450px;
-  transform: translateY(120px);
+  width: 400px;
+  transform: translateY(80px);
 }
 
 .logo-ville-container{
@@ -1168,7 +1182,7 @@ footer p {
   }
 
   .container{
-    margin-top: 8em;
+    margin-top: 7em;
   }
 
   .icon-scroll{
@@ -1203,7 +1217,7 @@ footer p {
   }
 
   .rhap_container{
-    margin-top: 0.5em !important;
+    margin-top: 1.0em !important;
   }
 
   .card-content h2{
@@ -1223,8 +1237,9 @@ footer p {
   }
 
   .para-container{
+    width: 88%;
     pointer-events: none;
-    transform: scale(0.5) translateY(-56%);
+    transform: scale(0.5) translateY(-50%) translateX(12%);
   }
 
   .logo-ville{
@@ -1254,7 +1269,21 @@ footer p {
 
   .down-arrow{
     margin-bottom: 0.5em;
-    padding-right: 0.25em;
+    padding-right: 0.4em;
+  }
+
+  .page-para-home{
+    width: 60%;
+    top: 20%;
+    font-size: 0.8em;
+  }
+
+  .card-content .card-text-full {
+    height: 95%;
+  }
+  
+  .card-container{
+    top: 62%;
   }
 
 
