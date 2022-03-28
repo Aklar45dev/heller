@@ -44,8 +44,6 @@ const Map = props => {
       <button onClick={() => toggleAudio()} className="mute-btn">
         <img id="button-img" src="./sound-on.png" />
       </button>
-      <img className='icon-scroll' src="./scroll.png" />
-
     </div>
   )
 }

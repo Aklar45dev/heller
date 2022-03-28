@@ -190,8 +190,18 @@ const MapView = forwardRef((props, ref) => {
     $("#MapView").css({display: 'none'})
   }
 
+  let top = 200 
 
-  
+  const scrollDown = () => {
+    top = top + 800
+    //$(window).scrollTop(top)
+    window.scroll({
+      top: top, 
+      left: 0, 
+      behavior: 'smooth'
+    });
+  }
+
   return (
     <div className="page" id="scroller">
       <div className="gradient"><img src="./gradient.png" /></div>
@@ -207,7 +217,7 @@ const MapView = forwardRef((props, ref) => {
           </div>
         </div>
       </div>
-      <div className="down-arrow">↓</div>
+      <button onClick={() => scrollDown()} className="down-arrow">↓</button>
       <div className="container">
         <div className="map-container">
           <div className="map-img-container">

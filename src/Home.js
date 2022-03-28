@@ -38,6 +38,7 @@ const Home = props => {
 
   useEffect(() => {
     $('.page').fadeOut(0).fadeIn(1000)
+    $('footer').fadeIn(250)
     $('#MapView').css({display: 'none'})
   },[])
 

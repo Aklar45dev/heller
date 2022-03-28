@@ -28,6 +28,7 @@ const Photosphere = props => {
     container.appendChild( renderer.domElement )
     pointData.forEach(item => createPoint(item))
     $('.page').fadeOut(0).fadeIn(1000)
+    $('footer').fadeOut(250)
     $('.logo').fadeOut(0).fadeIn(1000)
   },[])
 
@@ -165,7 +166,6 @@ let canClick = true
         if(!cardVisible){
           $('#arrows-for-boomers').fadeOut(500)
           $('#consul').fadeOut(500)
-          $('footer').fadeOut(500)
           childRef.current[pointName-1].playAudio()
           $(`#${pointName}`).css({display: 'flex'}).fadeOut(0).fadeIn(150)
           cardVisible = true
@@ -177,8 +177,6 @@ let canClick = true
   const hideCard = () => {
     $('#arrows-for-boomers').fadeIn(250)
     $('#consul').fadeIn(250)
-    $('footer').fadeIn(250)
-
     cardVisible = false
   }
 
