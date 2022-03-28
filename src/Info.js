@@ -36,10 +36,10 @@ const Info = props => {
             Est autorisé l'accès aux chiens tenus en laisse ;<br/><br/>
             L'usage des engins à deux roues (cyclomoteur, bicyclette, VTT) est strictement interdit, à<br/> l'exception des bicyclettes et jouets à roues pour enfants de moins de 6 ans.<br/><br/>
             Pêche interdite dans le grand étang par arrêté du Maire du 2 septembre 2016.<br/><br/><br/>
-            <span className='info-subtitle'>Contacts :</span><br/><br/>
-            Pour toutes questions techniques sur le parc :<br/>
+            <span className='info-subtitle'>Contacts:</span><br/><br/>
+            Pour toutes questions techniques sur le parc:<br/>
             espasesverts@ville-antony.fr<br/><br/>
-            Pour toutes questions concernant la consultation :<br/>
+            Pour toutes questions concernant la consultation:<br/>
             democratie@ville-antony.fr<br/><br/><br/>
             <span className='info-title'>MENTIONS LÉGALES</span><br/><br/>
             <span className='info-subtitle'>Édition</span><br/><br/>

@@ -1239,7 +1239,7 @@ footer p {
   .para-container{
     width: 88%;
     pointer-events: none;
-    transform: scale(0.5) translateY(-50%) translateX(12%);
+    transform: scale(0.45) translateY(-61%) translateX(13%);
   }
 
   .logo-ville{
@@ -1264,12 +1264,12 @@ footer p {
     background-color:rgba(0, 0, 0, 0);
     border-color: rgba(0, 0, 0, 0);
     font-family: 'Montserrat', sans-serif;
-    transform: scaleX(1.2) translateY(35px) translateX(5px);
+    transform: scaleX(1.2) translateY(5px) translateX(5px);
   }
 
   .down-arrow{
     margin-bottom: 0.5em;
-    padding-right: 0.4em;
+    padding-right: 1.0em;
   }
 
   .page-para-home{
@@ -1284,6 +1284,18 @@ footer p {
   
   .card-container{
     top: 62%;
+  }
+
+  .logo{
+    margin: 1em;
+  }
+
+  .skip{
+    margin-bottom: 2em;
+  }
+
+  .introLogo{
+    transform: scale(0.3) translateY(-100%);
   }
 
 
