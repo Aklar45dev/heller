@@ -1249,11 +1249,12 @@ footer p {
     background-color:rgba(0, 0, 0, 0);
     border-color: rgba(0, 0, 0, 0);
     font-family: 'Montserrat', sans-serif;
-    transform: scaleX(1.2);
+    transform: scaleX(1.2) translateY(35px) translateX(5px);
   }
 
   .down-arrow{
     margin-bottom: 0.5em;
+    padding-right: 0.25em;
   }
 
 

@@ -8,6 +8,8 @@ import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom'
 
 
 const MapView = forwardRef((props, ref) => {
+
+  let top = 200 
   
   useImperativeHandle(ref, () => ({
 
@@ -16,6 +18,7 @@ const MapView = forwardRef((props, ref) => {
       function myGreeting() {
         clearTimeout(myTimeout)
         $(window).scrollTop(10)
+        top = 200
       }
     }
     
@@ -25,6 +28,7 @@ const MapView = forwardRef((props, ref) => {
   })
 
   useEffect(() => {
+
 
     //ScrollMagicPluginIndicator(ScrollMagic)
     const controller = new ScrollMagic.Controller()
@@ -190,7 +194,6 @@ const MapView = forwardRef((props, ref) => {
     $("#MapView").css({display: 'none'})
   }
 
-  let top = 200 
 
   const scrollDown = () => {
     top = top + 800
