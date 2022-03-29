@@ -146,8 +146,8 @@ const Podcast = props => {
       <div className="pod-container">
           <div className='para-unveil'>
             <div className='pod-arrow-container'>
-              <button onClick={() => processId(-1)} className="left">{left}</button>
-              <button onClick={() => processId(1)} className="right">{right}</button>
+              <button onClick={() => processId(-1)} className="left"><img src="./FLECHE-G.png"/></button>
+              <button onClick={() => processId(1)} className="right"><img src="./FLECHE-D.png"/></button>
             </div>
             <div id="after">
               <img id='bg-1' src="./img/page3/après-plan-2.png" />
@@ -189,7 +189,7 @@ const Podcast = props => {
             <button className="pod-btn" id="btn3" onClick={() => switchSlide(6)}></button>
           </div>
           <div className="podPlayer">
-            <AudioPlayer autoPlay src="https://heller-bucker.s3.eu-west-3.amazonaws.com/RUGBY.mp3"/>
+            <AudioPlayer muted autoPlay src="https://heller-bucker.s3.eu-west-3.amazonaws.com/RUGBY.mp3"/>
           </div>
       </div>
     </div>

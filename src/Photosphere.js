@@ -215,8 +215,8 @@ let canClick = true
       <div id="canvas">
         <img className='icon-360' src="./360.png" />
         <div className='sphere-arrow-container' id='arrows-for-boomers'>
-          <button onClick={() => rotate(-1)} onMouseOver={() => hoverTag(true)} onMouseLeave={() => hoverTag(false)}>{left}</button>
-          <button onClick={() => rotate(1)} onMouseOver={() => hoverTag(true)} onMouseLeave={() => hoverTag(false)}>{right}</button>
+          <button onClick={() => rotate(-1)} onMouseOver={() => hoverTag(true)} onMouseLeave={() => hoverTag(false)}><img className='btn-sphere' src="./FLECHE-G.png"/></button>
+          <button onClick={() => rotate(1)} onMouseOver={() => hoverTag(true)} onMouseLeave={() => hoverTag(false)}><img className='btn-sphere' src="./FLECHE-D.png"/></button>
         </div>
       </div>
       <button onClick={() => toggleAudio()} className="mute-btn">

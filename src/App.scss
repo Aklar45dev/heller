@@ -133,6 +133,16 @@ $link-home: #00ff95;
   transform: translateX(-325px) scaleY(2);
 }
 
+.pod-arrow-container .right img{
+  height: 40px;
+  width: 50px;
+}
+
+.pod-arrow-container .left img{
+  height: 40px;
+  width: 50px;
+}
+
 .sphere-arrow-container{
   position: absolute;
   z-index: 1000;
@@ -209,4 +219,10 @@ $link-home: #00ff95;
     padding-left: 0;
     color: white;
   }
+
+}
+
+.btn-sphere{
+  height: 25px;
+  width: 30px;
 }
