@@ -1110,7 +1110,7 @@ footer p {
 
   .launcher-btn-container button img{
     width: 200px;
-    transform: translateY(50px);
+    transform: translateY(40px);
   }
 
   .consul{
@@ -1237,9 +1237,9 @@ footer p {
   }
 
   .para-container{
-    width: 88%;
+    width: 76%;
     pointer-events: none;
-    transform: scale(0.45) translateY(-61%) translateX(13%);
+    transform: scale(0.45) translateY(-60%) translateX(34%);
   }
 
   .logo-ville{
@@ -1296,6 +1296,10 @@ footer p {
 
   .introLogo{
     transform: scale(0.3) translateY(-100%);
+  }
+
+  .logo-home{
+    margin-top: 0.5em !important;
   }
 
 
