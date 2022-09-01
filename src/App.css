@@ -146,7 +146,7 @@ html{
   margin: 0.5em;
   text-align: center;
   margin-top: 1.75em;
-  margin-bottom: 0em;
+  background-color: transparent;
 }
 
 .page-subtitle-font {
@@ -158,6 +158,18 @@ html{
   margin: 0.5em;
   text-align: center;
   margin-top: 0em;
+  margin-bottom: 2em;
+}
+
+.page-subtitle-font-white {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.08em;
+  color:#ffffff; 
+  font-weight: 700;
+  font-size: 1.2em;
+  margin: 0.5em;
+  text-align: center;
+  margin-top: 1em;
   margin-bottom: 2em;
 }
 
@@ -653,20 +665,30 @@ margin-bottom: -4em;
 }
 
 .video-container{
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   height: 100%;
-  width: 100%;
-  background-color:rgba(0, 0, 0, 1);
+  width: 60%;
+  margin-top: 16em;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color:rgba(0, 0, 0, 0);
   justify-content: center;
 }
 
+.video-container-el{
+  margin: 1em;
+}
+
 .video-container video{
-  width: auto;
+  width: 100%;
   height: 100%;
+}
+
+.video-container iframe{
+  width: 100%;
+  height: 100%;
+  
 }
 
 .pod-container{
@@ -1316,6 +1338,29 @@ footer p {
   .btn-sphere{
     height: 16px !important;
     width: 20px !important;
+  }
+
+  .video-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    margin-top: 10em;
+    background-color:rgba(0, 0, 0, 0);
+    justify-content: center;
+  }
+
+  .page-subtitle-font-white {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.08em;
+    color:#ffffff; 
+    font-weight: 700;
+    font-size: 1.2em;
+    margin: 0.5em;
+    text-align: center;
+    margin-top: 0em;
+    margin-bottom: 0.5em;
   }
 
 

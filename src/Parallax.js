@@ -35,11 +35,23 @@ const Parallax = props => {
       <div className="header-page">
         <div className="text-wrappper">
           <div className="page-title-font">L’ÉMERGENCE D’UN GRAND PROJET</div>
-          <div className="page-subtitle-font">réaménagement du parc heller</div>
+          <div className="page-subtitle-font">La réouverture de la Bièvre</div>
+          <div className="page-subtitle-font-white">Découvrez l'avancée du projet à travers cette websérie</div>
         </div>
       </div>
       <div className="video-container">
-        <video controls="controls" autoPlay src="https://heller-bucker.s3.eu-west-3.amazonaws.com/page+5_1.mp4" />
+        <div className='video-container-el'>
+          <div className="page-title-font">INTRO</div>
+          <video controls="controls" src="https://heller-bucker.s3.eu-west-3.amazonaws.com/page+5_1.mp4" />
+        </div>
+        <div className='video-container-el'>
+          <div className="page-title-font">ÉPISODE 1</div>
+          <iframe src="https://www.youtube.com/embed/L1aF3zSD1S0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div className='video-container-el'>
+          <div className="page-title-font">ÉPISODE 2</div>
+          <iframe src="https://www.youtube.com/embed/nZE1WXzphhQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   )
