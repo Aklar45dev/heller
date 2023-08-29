@@ -3,6 +3,7 @@ import Home from './Home'
 import Photosphere from './Photosphere'
 import Map from './Map'
 import Info from './Info'
+import FAQ from './FAQ'
 import MapView from './MapView'
 import Podcast from './Podcast'
 import Interview from './Interview'
@@ -78,6 +79,7 @@ const App = () => {
         </div>
         <Switch>
           <Route path='/parallax' component={() => <Parallax lecteur={sphereAudio}/>} />
+          <Route path='/faq' component={() => <FAQ lecteur={sphereAudio}/>} />
           <Route path='/info' component={() => <Info lecteur={sphereAudio}/>} />
           <Route path='/photosphere' component={() => <Photosphere lecteur={sphereAudio} />} />
           <Route path='/map' component={() => <Map lecteur={sphereAudio} showMap={showMap} />}/>

@@ -2,9 +2,41 @@ $bg-color: rgb(46, 46, 81);
 $link-color: #cafe9b;
 $link-home: #00ff95;
 
+.Question-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+  position: relative;
+}
+
+.question-container{
+  padding: 0.5em;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  .question-title{
+    background-color: rgb(74, 75, 144);
+    color: cyan;
+    font-weight: 700;
+    padding: 0.25em;
+    padding-left: 0.5em;
+  }
+  .question-answer{
+    color: azure;
+    font-size: 1em;
+    font-weight: 300;
+    background-color: transparent;
+  }
+}
+
+.hide{
+  display: none;
+}
+
 .header-page{
   background-image: linear-gradient(rgba(46, 46, 81, 1),rgba(46, 46, 81, 1));
-  position: fixed;
+  position: relative;
   display: flex;
   width: 100%;
   justify-content: center;
