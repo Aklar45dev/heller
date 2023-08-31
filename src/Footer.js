@@ -9,8 +9,8 @@ const Footer = () => {
   return (
     <footer>
       <Link to="./faq">FAQ</Link>
-      <Link to="./info" id="footer-mention">infos pratiques - mentions légales</Link>
-      <p id="footer-text">Parc Heller © {date}</p>
+      <Link to="./info" id="">infos pratiques - mentions légales</Link>
+      <p id="">Parc Heller © {date}</p>
     </footer>
   )
 }

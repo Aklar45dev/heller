@@ -5,30 +5,33 @@ import React,{ useEffect, useState } from 'react';
 const Question = (props) => {
 
   let visible = false
+  
   $(() => {
     $("#"+props.ansid).hide(0)
   })
 
   const toggle = () => {
-    if(visible)
+    if(!visible)
       {
-        $("#"+props.ansid).show(200)
-        visible = false
+        $("#"+props.ansid).show(500)
+        $("#arrow"+props.ansid).addClass("rotate")
+        visible = true
         return
       }
-      if(!visible)
+      if(visible)
       {
-        $("#"+props.ansid).hide(200)
-        visible = true
+        $("#"+props.ansid).hide(500)
+        $("#arrow"+props.ansid).removeClass("rotate")
+        visible = false
       }
   }
 
   return (
     <div className="question-container">
-      <a className='question-title' onClick={() => toggle()}><div id="" className='rotate'>▶</div>{props.title}</a>
+      <a className='question-title' onClick={() => toggle()}><div id={"arrow"+props.ansid} className=''>&nbsp;&nbsp;▶&nbsp;&nbsp;</div>{props.title}</a>
       <div id={props.ansid}>
         <p className='question-answer'>{props.text}</p>
-        <iframe className={props.vidsrc === "none" ? "hide" : "" } src={props.vidsrc} title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        <video className={props.vidsrc === "none" ? "hide" : "" } controls='controls' src="https://heller-bucker.s3.eu-west-3.amazonaws.com/film+intro_1.mp4" />
         <img className={props.imgsrc === "none" ? "hide" : "question-img" } src={props.imgsrc} />
       </div>
     </div>
