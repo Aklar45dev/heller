@@ -848,11 +848,12 @@ footer{
   padding-bottom: 2em;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   bottom: 0;
   position: relative;
   z-index: 1;
-  width: 50%;
-  margin-left: 25%;
+  width: 100%;
+  align-items: center;
 }
 
 footer p {
@@ -863,6 +864,12 @@ footer p {
   z-index: -2;
   font-weight: 500;
   text-shadow: 3px 3px 3px black;
+}
+
+footer a {
+  font-family: 'Montserrat', sans-serif;
+  color:#cafe9b; 
+  text-decoration: none;
 }
 
 
@@ -944,6 +951,7 @@ footer p {
   margin: 1em;
   border: none;
   background: none;
+  z-index: 1000;
 }
 
 
@@ -1138,6 +1146,7 @@ footer p {
   .consul{
     width: 6em;
     margin-top: 2em;
+    z-index: 1000;
   }
 
   .page-title-font{

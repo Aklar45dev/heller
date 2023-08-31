@@ -72,7 +72,7 @@ const App = () => {
           <Link id="home-link" onClick={() => pauseAudio()} to="/"><strong>{accueil}</strong></Link>
         </div>
         <div id="consultation-container">
-          <a className="consul" id="consul" onClick={() => pauseAudio()} href="https://participer.ville-antony.fr/fr-FR/projects/consultation-parc-heller/"><img src="./BOUTTON RESULTATS.png"/></a>
+          <a className="consul" id="consul" onClick={() => pauseAudio()} href="https://participer.ville-antony.fr/fr-FR/projects/consultation-parc-heller/"><img src="./QUESTIONS.png"/></a>
         </div>
         <div id="MapView">
           <MapView ref={el => MapRef.current = el} />

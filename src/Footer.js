@@ -8,8 +8,9 @@ const Footer = () => {
 
   return (
     <footer>
-      <p id="footer-text">Parc Heller © {date}</p>
+      <Link to="./faq">FAQ</Link>
       <Link to="./info" id="footer-mention">infos pratiques - mentions légales</Link>
+      <p id="footer-text">Parc Heller © {date}</p>
     </footer>
   )
 }
