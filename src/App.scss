@@ -21,12 +21,18 @@ $link-home: #00ff95;
     font-weight: 700;
     padding: 0.25em;
     padding-left: 0.5em;
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
   }
   .question-answer{
     color: azure;
     font-size: 1em;
     font-weight: 300;
     background-color: transparent;
+  }
+  .question-img{
+    width: 100%;
   }
 }
 
@@ -35,7 +41,8 @@ $link-home: #00ff95;
 }
 
 .header-page{
-  background-image: linear-gradient(rgba(46, 46, 81, 1),rgba(46, 46, 81, 1));
+  //background-image: linear-gradient(rgba(46, 46, 81, 1),rgba(46, 46, 81, 1));
+  background-image: transparent;
   position: relative;
   display: flex;
   width: 100%;
@@ -93,6 +100,10 @@ $link-home: #00ff95;
   button:hover{
     opacity: 0.6;
   }
+}
+
+.rotate{
+  transform: rotate(90deg);
 }
 
 .rhap_container{

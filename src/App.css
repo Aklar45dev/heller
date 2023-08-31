@@ -622,7 +622,7 @@ margin-bottom: -4em;
   height: auto;
   display: grid;
   z-index: -11;
-  margin-top: 12em;
+  margin-top: 2em;
   background-color:rgba(0, 0, 0, 0);
   pointer-events: none;
 }
@@ -951,7 +951,7 @@ footer a {
   margin: 1em;
   border: none;
   background: none;
-  z-index: 1000;
+  z-index: 10;
 }
 
 
@@ -1224,7 +1224,7 @@ footer a {
   }
 
   .container{
-    margin-top: 6.5em;
+    margin-top: 0em;
   }
 
   .icon-scroll{

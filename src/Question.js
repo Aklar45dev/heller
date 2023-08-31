@@ -12,24 +12,24 @@ const Question = (props) => {
   const toggle = () => {
     if(visible)
       {
-        $("#"+props.ansid).hide(300)
+        $("#"+props.ansid).show(200)
         visible = false
         return
       }
       if(!visible)
       {
-        $("#"+props.ansid).show(300)
+        $("#"+props.ansid).hide(200)
         visible = true
       }
   }
 
   return (
     <div className="question-container">
-      <a className='question-title' onClick={() => toggle()}>▶ {props.title}</a>
+      <a className='question-title' onClick={() => toggle()}><div id="" className='rotate'>▶</div>{props.title}</a>
       <div id={props.ansid}>
         <p className='question-answer'>{props.text}</p>
         <iframe className={props.vidsrc === "none" ? "hide" : "" } src={props.vidsrc} title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-        <img className={props.imgsrc === "none" ? "hide" : "" } src={props.imgsrc} />
+        <img className={props.imgsrc === "none" ? "hide" : "question-img" } src={props.imgsrc} />
       </div>
     </div>
   )
