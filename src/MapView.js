@@ -216,8 +216,8 @@ const MapView = forwardRef((props, ref) => {
 
 
   const scrollDown = () => {
-    top = top + 800
-    //$(window).scrollTop(top)
+    top = top + 825
+    //$(window).scollTop(top)
     window.scroll({
       top: top, 
       left: 0, 

@@ -6,7 +6,6 @@ $link-home: #00ff95;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1000;
   position: relative;
 }
 
@@ -27,6 +26,8 @@ $link-home: #00ff95;
   
   }
   .question-answer{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
     color: azure;
     font-size: 1em;
     font-weight: 300;
@@ -126,7 +127,7 @@ $link-home: #00ff95;
 
 .podPlayer{
   width: 375px;
-  margin-bottom: 5em;
+  margin-top: 2em;
   z-index: 100;
 }
 
@@ -236,6 +237,7 @@ $link-home: #00ff95;
   color: #cafe9b;
   text-decoration: none;
   position: fixed;
+  z-index: 100;
 }
 
 .patenaire-container{

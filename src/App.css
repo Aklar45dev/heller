@@ -258,7 +258,7 @@ html{
 
 .acteurs{
   margin-top: 2em;
-  margin-bottom: 12em;
+  margin-bottom: 2em;
 }
 
 .acteurs1{
@@ -661,7 +661,6 @@ margin-bottom: -4em;
 
 .videoPlayerInterview{
   top: 0;
-  border-radius: 1em;
 }
 
 .video-container{
@@ -669,7 +668,7 @@ margin-bottom: -4em;
   grid-template-columns: 1fr 1fr 1fr;
   height: 100%;
   width: 60%;
-  margin-top: 16em;
+  margin-top: 0em;
   margin-left: 20%;
   margin-right: 20%;
   background-color:rgba(0, 0, 0, 0);
@@ -1175,12 +1174,14 @@ footer a {
   #home-link{
     margin-top: 3.5em !important;
     margin-left: 1.25em !important;
+    z-index: 100 !important;
   }
 
   .page-para{
     width: 60%;
     pointer-events: none;
     font-size: 0.8em;
+    margin-bottom: 0;
   }
 
   .patenaire-container{
@@ -1355,7 +1356,7 @@ footer a {
     height: 100%;
     width: 100%;
     margin: 0;
-    margin-top: 10em;
+    margin-top: 0em;
     background-color:rgba(0, 0, 0, 0);
     justify-content: center;
   }
@@ -1370,6 +1371,14 @@ footer a {
     text-align: center;
     margin-top: 0em;
     margin-bottom: 0.5em;
+  }
+
+  .pod-container{
+    display: flex;
+    margin-top: 2em;
+    align-items: center;    
+    justify-content: center;
+    flex-direction: column;
   }
 
 
