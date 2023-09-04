@@ -22,16 +22,8 @@ const FAQ =props => {
     $('#logo-container').removeClass("logo-container-center")
   },[])
 
-  
-  const history = useHistory()
-
-  const nextPage = () => {
-    history.push("/next");
-  }
-  
   return (
     <div className="page">
-      <div className="gradient"><img src="./gradient.png" /></div>
       <div className="gradient2"><img src="./gradient.png" /></div>
       <div className="header-page">
         <div className="text-wrappper">
@@ -39,14 +31,14 @@ const FAQ =props => {
         </div>
       </div>
       <div className='Question-main'>
-          <Question vidsrc="https://heller-bucker.s3.eu-west-3.amazonaws.com/film+intro_1.mp4" imgsrc="none" ansid="ans1" title="Pourquoi rouvrir la Bièvre ?" text="La Métropole du Grand Paris pilote le projet de réouverture de la Bièvre à Antony. En effet, elle exerce de plein droit, en lieu et place de ses communes membres, la compétence « Gestion des Milieux Aquatiques et Prévention des Inondations » dite GEMAPI qui vise à replacer la gestion des cours d’eau dans une réflexion globale sur l’aménagement du territoire.  
+          <Question vidsrc="https://heller-bucker.s3.eu-west-3.amazonaws.com/ITV-SMVB%26MGP_1.mp4" imgsrc="none" ansid="ans1" title="Pourquoi rouvrir la Bièvre ?" text="La Métropole du Grand Paris pilote le projet de réouverture de la Bièvre à Antony. En effet, elle exerce de plein droit, en lieu et place de ses communes membres, la compétence « Gestion des Milieux Aquatiques et Prévention des Inondations » dite GEMAPI qui vise à replacer la gestion des cours d’eau dans une réflexion globale sur l’aménagement du territoire.  
 Afin de s’inscrire dans la mise en œuvre opérationnelle de la politique de l’eau du bassin versant de la Bièvre et en partenariat avec les acteurs du territoire, la Métropole a identifié sur tout le parcours de la Bièvre, entre Antony et Paris, plusieurs sites ayant un fort potentiel pour la réouverture et renaturation de cette rivière. Le but étant de lui redonner un aspect proche d’un état naturel et une dynamique équilibrée.
 Les études viennent ainsi d’être engagées sur 5 secteurs : Antony (parc Heller), l’Haÿ-les-Roses (parc de la Bièvre), Cachan (jardin le Vallon) ; Gentilly (parc Pablo-Picasso), Paris (Parc Kellerman).
 La ville d’Antony a le privilège, à la différence des autres communes engagées aux côtés de la Métropole, d’accueillir sur son territoire le ru des Godet, affluent de la Bièvre. Il chemine notamment au sein du parc Heller, permettant ainsi d’y envisager la restauration d’une confluence naturelle et ainsi participer au fonctionnement naturel de ces deux rivières. 
 
 Les grands enjeux liés à l’eau, à la biodiversité et à l’adaptation au changement climatique sont au cœur de ce projet de territoire ambitieux et vertueux.
 "/>
-          <Question vidsrc="none" imgsrc="./plan.png" ansid="ans2" title="Quelles sont les effets de cette réouverture sur les risques météorologiques (inondation, période d’assèchement...) ?" text="Le projet va contribuer à réduire le risque global d’inondation. Les lits emboités offrent d’importantes capacités de stockage pour absorber le surplus d’eau. 
+          <Question vidsrc="none" imgsrc="./plan.png" ansid="ans2" title="Quels sont les effets de cette réouverture sur les risques météorologiques (inondation, période d’assèchement...) ?" text="Le projet va contribuer à réduire le risque global d’inondation. Les lits emboités offrent d’importantes capacités de stockage pour absorber le surplus d’eau. 
 
 Sur sa partie amont, la Bièvre est équipée de nombreux bassins de retenue.  Associés à un système de télégestion (un ensemble d’appareils et installations hydrauliques qui permet une connaissance en temps réel des conditions de terrain et une gestion automatisée à distance des flux des cours d’eau), ils régulent de façon optimisée le débit du cours d’eau et réduisent au maximum les risques d’inondation.
 Par ailleurs, les sites de réouverture ont justement été choisis afin de permettre à la rivière de suivre son cycle naturel, étiage (le plus faible niveau du cours d’eau sur l’année) et crue, sans affecter les riverains. L’eau qui sera ainsi stockée dans les lits n’impactera pas les secteurs urbanisés et réduira ou ralentira le flux vers l’aval du bassin versant. 

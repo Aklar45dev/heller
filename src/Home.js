@@ -7,6 +7,9 @@ import $ from "jquery"
 
 const Home = props => {
 
+  $('footer').css({display: 'none'})
+
+
   $(() => {
     window.addEventListener( 'pointermove', parallaxUpdate )
     $('body').css('cursor', 'default')
@@ -24,12 +27,13 @@ const Home = props => {
       $('.logo').fadeOut(0)
     }
     if(props.hasLaunched){
-      $('#launch-btn').fadeOut(800)
+      $('#launch-btn').fadeOut(0)
       $('#launch').css({display: 'none'})
       $('.logo').fadeOut(0).fadeIn(0)
       $('.logo-ville').fadeOut(0)
       $('#footer-mention').css({display: 'block'})
       $('#homeVid').css({display: 'none'})
+      $('footer').css({display: 'flex'})
       props.lecteur.play()
     }
     timer()
@@ -38,7 +42,7 @@ const Home = props => {
 
   useEffect(() => {
     $('.page').fadeOut(0).fadeIn(1000)
-    $('footer').fadeIn(250)
+    //$('footer').fadeIn(250)
     $('#MapView').css({display: 'none'})
   },[])
 
@@ -56,6 +60,8 @@ const Home = props => {
     props.lecteur.play()
     $('.page').fadeOut(0).delay(1000).fadeIn(1000)
     $('.logo').fadeOut(0).delay(1000).fadeIn(1000)
+    $('footer').css({position: 'absolute'})
+    $('footer').css({display: 'flex'})
     props.didLaunch()
   }
 

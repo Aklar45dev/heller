@@ -5,7 +5,7 @@ import React,{ useEffect, useState } from 'react';
 const Question = (props) => {
 
   let visible = false
-  
+
   $(() => {
     $("#"+props.ansid).hide(0)
   })
@@ -31,7 +31,7 @@ const Question = (props) => {
       <a className='question-title' onClick={() => toggle()}><div id={"arrow"+props.ansid} className=''>&nbsp;&nbsp;▶&nbsp;&nbsp;</div>{props.title}</a>
       <div id={props.ansid}>
         <p className='question-answer'>{props.text}</p>
-        <video className={props.vidsrc === "none" ? "hide" : "" } controls='controls' src="https://heller-bucker.s3.eu-west-3.amazonaws.com/film+intro_1.mp4" />
+        <video className={props.vidsrc === "none" ? "hide" : "" } preload="auto" controls={true} src="https://heller-bucker.s3.eu-west-3.amazonaws.com/ITV-SMVB%26MGP_1.mp4" />
         <img className={props.imgsrc === "none" ? "hide" : "question-img" } src={props.imgsrc} />
       </div>
     </div>
